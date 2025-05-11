@@ -11,7 +11,7 @@ import { Menu, X, MessageCircle } from "lucide-react"
 const whatsappMessage = encodeURIComponent(
   "Hola, me gustaria obtener mas informacion sobre los planes de entrenamiento. Muchas gracias!",
 )
-const whatsappLink = `https://wa.me/5491126578585?text=${whatsappMessage}`
+const whatsappLink = `https://wa.me/5491126578585?text="${whatsappMessage}"`
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
