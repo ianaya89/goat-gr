@@ -6,13 +6,108 @@ import { ThemeProvider } from "@/components/theme-provider"
 
 const inter = Inter({ subsets: ["latin"] })
 
-// Asegurarnos de que el favicon esté correctamente configurado en los metadatos
+// Metadatos mejorados para SEO con favicon actualizado
 export const metadata: Metadata = {
-  title: "GOAT Sports - Entrenamiento y Academia de Hockey sobre Césped",
+  title: "GOAT Sports - Entrenamiento y Academia de Hockey sobre Césped, Fútbol y Rugby",
   description:
-    "Entrenamiento experto de hockey sobre césped, formación personalizada y programas inmersivos diseñados para elevar tus habilidades al siguiente nivel.",
+    "Academia deportiva especializada en hockey sobre césped, fútbol y rugby. Ofrecemos entrenamiento personalizado, campus deportivos y servicios de consultoría para clubes y colegios en Buenos Aires, Argentina.",
+  keywords: [
+    "hockey sobre césped",
+    "entrenamiento deportivo",
+    "academia de hockey",
+    "fútbol",
+    "rugby",
+    "campus deportivo",
+    "consultoría deportiva",
+    "Buenos Aires",
+    "Argentina",
+  ],
+  authors: [{ name: "GOAT Sports" }],
+  creator: "GOAT Sports",
+  publisher: "GOAT Sports",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://goatsports.ar"),
+  alternates: {
+    canonical: "/",
+    languages: {
+      "es-AR": "/",
+    },
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
-    icon: "/favicon.ico",
+    icon: [{ url: "/favicon-new.ico" }, { url: "/site-icon.ico" }],
+    shortcut: "/favicon-new.ico",
+    apple: "/apple-touch-icon.png",
+    other: [
+      {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        url: "/apple-touch-icon.png",
+      },
+      {
+        rel: "apple-touch-icon",
+        sizes: "152x152",
+        url: "/apple-touch-icon-152x152.png",
+      },
+      {
+        rel: "apple-touch-icon",
+        sizes: "167x167",
+        url: "/apple-touch-icon-167x167.png",
+      },
+      {
+        rel: "apple-touch-icon",
+        sizes: "120x120",
+        url: "/apple-touch-icon-120x120.png",
+      },
+    ],
+  },
+  manifest: "/manifest.webmanifest",
+  openGraph: {
+    type: "website",
+    locale: "es_AR",
+    url: "https://goatsports.ar",
+    title: "GOAT Sports - Academia Deportiva de Elite",
+    description:
+      "Entrenamiento experto de hockey sobre césped, fútbol y rugby. Formación personalizada y programas inmersivos para elevar tus habilidades al siguiente nivel.",
+    siteName: "GOAT Sports",
+    images: [
+      {
+        url: "https://goatsports.ar/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "GOAT Sports - Academia Deportiva",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "GOAT Sports - Academia Deportiva de Elite",
+    description:
+      "Entrenamiento experto de hockey sobre césped, fútbol y rugby. Formación personalizada y programas inmersivos para elevar tus habilidades al siguiente nivel.",
+    images: ["https://goatsports.ar/twitter-image.jpg"],
+    creator: "@goatsports",
+    site: "@goatsports",
+  },
+  verification: {
+    google: "google-site-verification-code",
+    yandex: "yandex-verification-code",
+    other: {
+      me: ["mailto:hola@goatsports.ar", "https://goatsports.ar"],
+    },
   },
     generator: 'v0.dev'
 }
@@ -24,9 +119,67 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <head>
+        {/* Forzar la actualización del favicon con un parámetro de versión */}
+        <link rel="icon" href="/favicon-new.ico?v=2" />
+        <link rel="shortcut icon" href="/favicon-new.ico?v=2" />
+
+        {/* Etiquetas adicionales para dispositivos Apple */}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+        {/* Etiqueta de región geográfica */}
+        <meta name="geo.region" content="AR-B" />
+        <meta name="geo.placename" content="Buenos Aires" />
+
+        {/* Etiqueta de color del tema */}
+        <meta name="theme-color" content="#00237c" />
+      </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           {children}
+
+          {/* JSON-LD para datos estructurados */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "SportsClub",
+                name: "GOAT Sports",
+                description: "Academia deportiva especializada en hockey sobre césped, fútbol y rugby.",
+                url: "https://goatsports.ar",
+                logo: "https://goatsports.ar/images/goat-sports-logo.png",
+                image: "https://goatsports.ar/images/training-center-main.png",
+                telephone: "+5491126578585",
+                email: "hola@goatsports.ar",
+                address: {
+                  "@type": "PostalAddress",
+                  streetAddress: "San Martin 1649",
+                  addressLocality: "Vicente Lopez",
+                  postalCode: "1638",
+                  addressRegion: "Buenos Aires",
+                  addressCountry: "AR",
+                },
+                geo: {
+                  "@type": "GeoCoordinates",
+                  latitude: "-34.5308",
+                  longitude: "-58.4825",
+                },
+                openingHours: "Mo,Tu,We,Th,Fr 08:00-21:00",
+                sameAs: [
+                  "https://www.facebook.com/goatsports",
+                  "https://www.instagram.com/goatsports",
+                  "https://www.tiktok.com/@goatsports",
+                ],
+                offers: {
+                  "@type": "Offer",
+                  name: "Programas de entrenamiento deportivo",
+                  description: "Entrenamiento personalizado, campus deportivos y servicios de consultoría.",
+                },
+              }),
+            }}
+          />
         </ThemeProvider>
       </body>
     </html>
