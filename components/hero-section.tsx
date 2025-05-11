@@ -28,8 +28,24 @@ const heroImages = [
   },
 ]
 
+// Array de objetivos para el slogan dinámico
+const objetivos = [
+  "aprender a jugar",
+  "mejorar tu técnica",
+  "dominar el juego",
+  "competir al más alto nivel",
+  "llegar a la selección",
+  "superar tus límites",
+  "convertirte en profesional",
+  "desarrollar tu potencial",
+  "formar parte de un equipo",
+]
+
 export default function HeroSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentObjetivo, setCurrentObjetivo] = useState(0)
+  const [displayedObjetivo, setDisplayedObjetivo] = useState(objetivos[0])
+  const [isChanging, setIsChanging] = useState(false)
 
   // Auto-rotate images every 5 seconds
   useEffect(() => {
@@ -38,6 +54,26 @@ export default function HeroSection() {
     }, 5000)
     return () => clearInterval(interval)
   }, [])
+
+  // Rotate objetivos every 3 seconds with smooth transition
+  useEffect(() => {
+    const rotateObjetivos = () => {
+      setIsChanging(true)
+
+      setTimeout(() => {
+        const nextIndex = (currentObjetivo + 1) % objetivos.length
+        setCurrentObjetivo(nextIndex)
+        setDisplayedObjetivo(objetivos[nextIndex])
+
+        setTimeout(() => {
+          setIsChanging(false)
+        }, 100)
+      }, 500)
+    }
+
+    const interval = setInterval(rotateObjetivos, 3500)
+    return () => clearInterval(interval)
+  }, [currentObjetivo])
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % heroImages.length)
@@ -98,7 +134,28 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 h-full flex flex-col items-center justify-center text-center">
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-          Entrena con los <span className="text-blue-400">mejores</span>
+          <span className="block mb-2">Entrenate con nosotros</span>
+          <span className="relative inline-block overflow-hidden h-[1.2em] min-w-[280px] md:min-w-[400px]">
+            <span
+              className={`absolute w-full transition-all duration-500 ease-in-out ${
+                isChanging ? "opacity-0 transform -translate-y-10" : "opacity-100 transform translate-y-0"
+              }`}
+            >
+              {/* Contenedor con fondo blanco */}
+              <span className="inline-block bg-white px-4 py-1 rounded-md">
+                {/* Texto con gradiente */}
+                <span
+                  className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+                  style={{
+                    backgroundSize: "200% auto",
+                    animation: "gradient 3s linear infinite",
+                  }}
+                >
+                  {displayedObjetivo}
+                </span>
+              </span>
+            </span>
+          </span>
         </h1>
         <p className="text-xl text-white/90 max-w-2xl mb-8">
           Entrenamiento experto, formación personalizada y programas inmersivos diseñados para elevar tus habilidades

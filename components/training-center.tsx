@@ -32,7 +32,7 @@ export default function TrainingCenter() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
           <img
-            src="/placeholder.svg?key=vao72"
+            src="/images/synthetic-field.png"
             alt="Césped Sintético Profesional"
             className="w-full h-48 object-cover"
           />
@@ -49,11 +49,7 @@ export default function TrainingCenter() {
         </div>
 
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <img
-            src="/placeholder.svg?key=zdyzb"
-            alt="Gimnasio de Alto Rendimiento"
-            className="w-full h-48 object-cover"
-          />
+          <img src="/images/training-gym.png" alt="Gimnasio de Alto Rendimiento" className="w-full h-48 object-cover" />
           <div className="p-6">
             <div className="flex items-center mb-3">
               <Zap className="h-5 w-5 text-blue-600 mr-2" />
@@ -67,7 +63,11 @@ export default function TrainingCenter() {
         </div>
 
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <img src="/placeholder.svg?key=9zt2e" alt="Campo Físico Cognitivo" className="w-full h-48 object-cover" />
+          <img
+            src="/images/video-analysis-room.png"
+            alt="Campo Físico Cognitivo"
+            className="w-full h-48 object-cover"
+          />
           <div className="p-6">
             <div className="flex items-center mb-3">
               <Shield className="h-5 w-5 text-blue-600 mr-2" />

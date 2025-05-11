@@ -72,6 +72,27 @@ const staffMembers: StaffMember[] = [
     bio: "Ex futbolista profesional con licencia de entrenador UEFA. Martín combina técnicas modernas con su amplia experiencia para desarrollar jugadores completos.",
     imageQuery: "professional soccer coach",
   },
+  {
+    id: 9,
+    name: "Alejandra Vázquez",
+    position: "Nutricionista Deportiva",
+    bio: "Especialista en nutrición deportiva con maestría en ciencias del deporte. Alejandra desarrolla planes nutricionales personalizados para optimizar el rendimiento y la recuperación.",
+    imageQuery: "sports nutritionist female",
+  },
+  {
+    id: 10,
+    name: "Roberto Sánchez",
+    position: "Fisioterapeuta",
+    bio: "Fisioterapeuta deportivo con experiencia en equipos de élite. Roberto se especializa en la prevención y rehabilitación de lesiones específicas de deportes de campo.",
+    imageQuery: "sports physiotherapist male",
+  },
+  {
+    id: 11,
+    name: "Lucía Morales",
+    position: "Psicóloga Deportiva",
+    bio: "Psicóloga especializada en rendimiento deportivo y gestión del estrés competitivo. Lucía trabaja con los atletas para desarrollar mentalidad ganadora y resiliencia.",
+    imageQuery: "sports psychologist female",
+  },
 ]
 
 export default function StaffSection() {
@@ -159,9 +180,6 @@ export default function StaffSection() {
     <div className="container mx-auto px-4">
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">Staff</h2>
-        <p className="text-gray-600 max-w-2xl mx-auto mb-4">
-          Conoce a nuestro equipo de profesionales dedicados a tu desarrollo deportivo.
-        </p>
         <p className="text-gray-600 max-w-2xl mx-auto">
           En GOAT Sports, nos apasiona desarrollar jugadores de hockey sobre césped que sobresalgan tanto dentro como
           fuera del campo. Nuestro enfoque integral se centra en habilidades técnicas, conciencia táctica,

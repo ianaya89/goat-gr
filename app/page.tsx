@@ -8,7 +8,8 @@ import TrainingCenter from "@/components/training-center"
 import ConsultingServices from "@/components/consulting-services"
 import CampusSection from "@/components/campus-section"
 import HeroSection from "@/components/hero-section"
-import { ArrowRight, MessageCircle } from "lucide-react"
+import ContactForm from "@/components/contact-form"
+import { ArrowRight } from "lucide-react"
 
 // Mensaje predeterminado codificado para URL
 const whatsappMessage = encodeURIComponent(
@@ -60,13 +61,6 @@ export default function Home() {
       {/* Staff Section (Combined About and Team) */}
       <section className="py-16 md:py-24 bg-gray-50" id="staff">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Staff</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Conoce a nuestro equipo de profesionales dedicados a tu desarrollo deportivo.
-            </p>
-          </div>
-
           <StaffSection />
         </div>
       </section>
@@ -148,20 +142,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Contact Section - Reemplazado con formulario */}
       <section className="py-16 md:py-24 bg-blue-600 text-white" id="contact">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">¿Listo para Elevar tu Juego?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Únete a GOAT Sports hoy y comienza tu camino hacia la excelencia deportiva.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 flex items-center gap-2">
-                <MessageCircle className="h-5 w-5" />
-                Reservar una Consulta Gratuita
-              </Button>
-            </a>
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">¿Listo para Elevar tu Juego?</h2>
+            <p className="text-xl mb-8 max-w-2xl mx-auto">
+              Contáctanos hoy y comienza tu camino hacia la excelencia deportiva.
+            </p>
+          </div>
+
+          <div className="max-w-2xl mx-auto">
+            <ContactForm />
           </div>
         </div>
       </section>
@@ -182,7 +174,7 @@ export default function Home() {
                 className="flex-grow px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
                 required
               />
-              <Button type="submit" className="bg-blue-600 hover:bg-blue-700 w-full sm:w-auto">
+              <Button type="submit" className="bg-blue-600 hover:bg-blue-700 w-full sm:w-auto h-[50px]">
                 Suscribirse <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </form>
