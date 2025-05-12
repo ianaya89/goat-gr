@@ -9,7 +9,9 @@ import { Menu, X, MessageCircle } from "lucide-react"
 import { getWhatsAppLink } from "@/utils/whatsapp-link"
 
 // Obtener el enlace de WhatsApp correctamente formateado
-const whatsappLink = getWhatsAppLink()
+const whatsappLink = getWhatsAppLink(
+  "Hola, me gustaria obtener mas informacion sobre los planes de entrenamiento. Muchas gracias!",
+)
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -42,12 +44,12 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <img src="/images/goat-sports-logo.png" alt="GOAT Sports Logo" className="h-8 md:h-10 w-auto" />
+              <img src="/images/goat-sports-logo.png" alt="GOAT Sports Logo" className="h-8 tablet:h-10 w-auto" />
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation - Cambiado de md: a tablet: */}
+          <nav className="hidden tablet:flex items-center space-x-8">
             <a
               href="#services"
               className="text-gray-600 hover:text-blue-600 font-medium"
@@ -99,7 +101,7 @@ export default function Navbar() {
             </a>
           </nav>
 
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden tablet:flex items-center space-x-4">
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="inline-block">
               <Button className="bg-blue-600 hover:bg-blue-700 flex items-center gap-2">
                 <MessageCircle className="h-5 w-5" />
@@ -108,8 +110,8 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          {/* Mobile Menu Button - Cambiado de md: a tablet: */}
+          <div className="tablet:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-600 hover:text-blue-600 focus:outline-none"
@@ -120,9 +122,9 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Cambiado de md: a tablet: */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t">
+        <div className="tablet:hidden bg-white border-t">
           <div className="container mx-auto px-4 py-4 space-y-4">
             <a
               href="#services"

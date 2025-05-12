@@ -11,6 +11,7 @@ import HeroSection from "@/components/hero-section"
 import ContactForm from "@/components/contact-form"
 import { ArrowRight } from "lucide-react"
 import { getWhatsAppLink } from "@/utils/whatsapp-link"
+import { servicesData } from "@/data/services-data"
 
 // Obtener el enlace de WhatsApp correctamente formateado
 const whatsappLink = getWhatsAppLink()
@@ -24,50 +25,54 @@ export default function Home() {
       <HeroSection />
 
       {/* Services Section */}
-      <section className="py-16 md:py-24 bg-white" id="services">
+      <section className="py-16 tablet:py-24 bg-white" id="services">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Nuestros Programas</h2>
+            <h2 className="text-3xl tablet:text-4xl font-bold mb-4">Nuestros Programas</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Programas completos adaptados a deportistas de todos los niveles y ambiciones.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Cambiado a 1 columna para tablet y menos */}
+          <div className="grid grid-cols-1 tablet:grid-cols-3 gap-8">
             <ServiceCard
-              title="Entrenamiento Personal"
-              description="Sesiones individuales adaptadas a tus necesidades específicas. Desarrolla tus habilidades en hockey, fútbol, rugby o alto rendimiento con atención personalizada de nuestros entrenadores expertos."
+              title={servicesData[0].title}
+              description={servicesData[0].description}
               icon="UserCog"
               imageQuery="sports personal training session"
+              details={servicesData[0]}
             />
             <ServiceCard
-              title="Academia de Hockey y Rugby"
-              description="Únete a nuestro programa estructurado con sesiones regulares de entrenamiento, talleres de desarrollo de habilidades y oportunidades de juego competitivo en hockey y rugby."
+              title={servicesData[1].title}
+              description={servicesData[1].description}
               icon="GraduationCap"
               imageQuery="hockey and rugby academy training"
+              details={servicesData[1]}
             />
             <ServiceCard
-              title="Vení a entrenar con tu equipo"
-              description="Alquilá nuestras instalaciones de primer nivel para entrenamientos con tu equipo. Acceso completo a campos, equipamiento y espacios de análisis para elevar el rendimiento grupal."
+              title={servicesData[2].title}
+              description={servicesData[2].description}
               icon="Users"
               imageQuery="team training session sports"
+              details={servicesData[2]}
             />
           </div>
         </div>
       </section>
 
       {/* Staff Section (Combined About and Team) */}
-      <section className="py-16 md:py-24 bg-gray-50" id="staff">
+      <section className="py-16 tablet:py-24 bg-gray-50" id="staff">
         <div className="container mx-auto px-4">
           <StaffSection />
         </div>
       </section>
 
       {/* Training Center Section */}
-      <section className="py-16 md:py-24 bg-white" id="training-center">
+      <section className="py-16 tablet:py-24 bg-white" id="training-center">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Centro de Entrenamiento</h2>
+            <h2 className="text-3xl tablet:text-4xl font-bold mb-4">Centro de Entrenamiento</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Descubre nuestras instalaciones de primer nivel diseñadas para maximizar tu rendimiento y experiencia de
               entrenamiento.
@@ -79,10 +84,10 @@ export default function Home() {
       </section>
 
       {/* Campus Section */}
-      <section className="py-16 md:py-24 bg-gray-50" id="campus">
+      <section className="py-16 tablet:py-24 bg-gray-50" id="campus">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Campus</h2>
+            <h2 className="text-3xl tablet:text-4xl font-bold mb-4">Campus</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Experiencias inmersivas deportivas para jugadores de todos los niveles.
             </p>
@@ -93,10 +98,10 @@ export default function Home() {
       </section>
 
       {/* Consulting Services Section */}
-      <section className="py-16 md:py-24 bg-white" id="consulting">
+      <section className="py-16 tablet:py-24 bg-white" id="consulting">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Consultoría</h2>
+            <h2 className="text-3xl tablet:text-4xl font-bold mb-4">Consultoría</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Servicios profesionales de consultoría deportiva para clubes, colegios y countries que buscan elevar su
               nivel deportivo.
@@ -108,16 +113,17 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 md:py-24 bg-gray-50" id="testimonials">
+      <section className="py-16 tablet:py-24 bg-gray-50" id="testimonials">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Lo Que Dicen Nuestros Deportistas</h2>
+            <h2 className="text-3xl tablet:text-4xl font-bold mb-4">Lo Que Dicen Nuestros Deportistas</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Escucha a los atletas que han transformado su juego con GOAT Sports.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Cambiado a 1 columna para tablet y menos */}
+          <div className="grid grid-cols-1 tablet:grid-cols-3 gap-8">
             <TestimonialCard
               quote="El programa de entrenamiento personal en GOAT Sports transformó completamente mi juego. Mis habilidades técnicas y conciencia táctica mejoraron dramáticamente en solo unos meses."
               name="Sara Jiménez"
@@ -141,10 +147,10 @@ export default function Home() {
       </section>
 
       {/* Contact Section - Reemplazado con formulario */}
-      <section className="py-16 md:py-24 bg-blue-600 text-white" id="contact">
+      <section className="py-16 tablet:py-24 bg-blue-600 text-white" id="contact">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">¿Listo para Elevar tu Juego?</h2>
+            <h2 className="text-3xl tablet:text-4xl font-bold mb-6">¿Listo para Elevar tu Juego?</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
               Contáctanos hoy y comienza tu camino hacia la excelencia deportiva.
             </p>
@@ -160,7 +166,7 @@ export default function Home() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">Mantente Actualizado</h2>
+            <h2 className="text-2xl tablet:text-3xl font-bold mb-4">Mantente Actualizado</h2>
             <p className="text-gray-600 mb-6">
               Suscríbete a nuestro boletín para recibir consejos de entrenamiento, anuncios de eventos y ofertas
               exclusivas.

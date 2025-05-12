@@ -3,7 +3,7 @@ import { Award, Zap, Shield, MessageCircle } from "lucide-react"
 import { getWhatsAppLink } from "@/utils/whatsapp-link"
 
 // Obtener el enlace de WhatsApp correctamente formateado
-const whatsappLink = getWhatsAppLink()
+const whatsappLink = getWhatsAppLink("Hola, me gustaría programar una visita a las instalaciones. Gracias!")
 
 export default function TrainingCenter() {
   return (
@@ -13,12 +13,12 @@ export default function TrainingCenter() {
         <img
           src="/modern-field-hockey-facility.png"
           alt="Centro de Entrenamiento GOAT Sports"
-          className="w-full h-[400px] md:h-[500px] object-cover"
+          className="w-full h-[300px] sm:h-[400px] tablet:h-[500px] object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-          <div className="p-6 md:p-10 text-white">
-            <h3 className="text-2xl md:text-3xl font-bold mb-2">Instalaciones de Clase Mundial</h3>
-            <p className="text-lg md:text-xl max-w-2xl">
+          <div className="p-6 tablet:p-10 text-white">
+            <h3 className="text-xl sm:text-2xl tablet:text-3xl font-bold mb-2">Instalaciones de Clase Mundial</h3>
+            <p className="text-base sm:text-lg tablet:text-xl max-w-2xl">
               Nuestro centro de entrenamiento cuenta con la última tecnología y equipamiento para maximizar tu
               desarrollo en hockey sobre césped.
             </p>
@@ -26,8 +26,8 @@ export default function TrainingCenter() {
         </div>
       </div>
 
-      {/* Features Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+      {/* Features Grid - Cambiado a 1 columna para tablet y menos */}
+      <div className="grid grid-cols-1 tablet:grid-cols-3 gap-8 mb-12">
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
           <img
             src="/images/synthetic-field.png"

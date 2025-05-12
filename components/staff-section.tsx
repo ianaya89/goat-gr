@@ -106,7 +106,7 @@ export default function StaffSection() {
     const handleResize = () => {
       if (window.innerWidth < 640) {
         setSlidesToShow(1)
-      } else if (window.innerWidth < 1024) {
+      } else if (window.innerWidth < 980) {
         setSlidesToShow(2)
       } else if (window.innerWidth < 1280) {
         setSlidesToShow(3)
@@ -179,7 +179,7 @@ export default function StaffSection() {
   return (
     <div className="container mx-auto px-4">
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Staff</h2>
+        <h2 className="text-3xl tablet:text-4xl font-bold mb-4">Staff</h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
           En GOAT Sports, nos apasiona desarrollar jugadores de hockey sobre césped que sobresalgan tanto dentro como
           fuera del campo. Nuestro enfoque integral se centra en habilidades técnicas, conciencia táctica,
@@ -283,7 +283,7 @@ export default function StaffSection() {
         <Button
           variant="outline"
           size="icon"
-          className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white border-gray-200 text-gray-700 rounded-full z-10 shadow-md md:-left-5"
+          className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white border-gray-200 text-gray-700 rounded-full z-10 shadow-md sm:-left-5"
           onClick={prevSlide}
           aria-label="Miembros anteriores del equipo"
         >
@@ -293,7 +293,7 @@ export default function StaffSection() {
         <Button
           variant="outline"
           size="icon"
-          className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white border-gray-200 text-gray-700 rounded-full z-10 shadow-md md:-right-5"
+          className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white border-gray-200 text-gray-700 rounded-full z-10 shadow-md sm:-right-5"
           onClick={nextSlide}
           aria-label="Siguientes miembros del equipo"
         >

@@ -3,20 +3,22 @@ import { GraduationCap, Users, Building2, ClipboardList, Target, MessageCircle }
 import { getWhatsAppLink } from "@/utils/whatsapp-link"
 
 // Obtener el enlace de WhatsApp correctamente formateado
-const whatsappLink = getWhatsAppLink()
+const whatsappLink = getWhatsAppLink(
+  "Hola, me gustaría obtener información sobre los servicios de consultoría. Gracias!",
+)
 
 export default function ConsultingServices() {
   return (
     <div className="container mx-auto px-4">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div className="lg:h-[600px]">
+        <div className="lg:h-[600px] order-2 lg:order-1">
           <img
             src="/field-hockey-consultation.png"
             alt="Servicios de Consultoría GOAT Sports"
             className="rounded-lg shadow-lg w-full h-full object-cover"
           />
         </div>
-        <div>
+        <div className="order-1 lg:order-2">
           <h2 className="text-3xl font-bold mb-6">Servicios de Consultoría</h2>
 
           <div className="space-y-6">

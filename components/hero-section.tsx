@@ -6,7 +6,9 @@ import { ChevronLeft, ChevronRight, MessageCircle } from "lucide-react"
 import { getWhatsAppLink } from "@/utils/whatsapp-link"
 
 // Obtener el enlace de WhatsApp correctamente formateado
-const whatsappLink = getWhatsAppLink()
+const whatsappLink = getWhatsAppLink(
+  "Hola, me gustaria obtener mas informacion sobre los planes de entrenamiento. Muchas gracias!",
+)
 
 const heroImages = [
   {
@@ -131,7 +133,7 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 h-full flex flex-col items-center justify-center text-center">
-        <h1 className="text-4xl md:text-6xl font-bold text-white">
+        <h1 className="text-3xl sm:text-4xl tablet:text-6xl font-bold text-white">
           <span className="block mb-4">Entrenate con GOAT para</span>
 
           {/* Contenedor para el texto animado */}
@@ -149,7 +151,7 @@ export default function HeroSection() {
                 className="
                   bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 
                   bg-clip-text text-transparent inline-block
-                  animate-gradient
+                  animate-gradient text-2xl sm:text-3xl tablet:text-4xl
                 "
               >
                 {displayedObjetivo}
@@ -158,19 +160,19 @@ export default function HeroSection() {
           </div>
         </h1>
 
-        <p className="text-xl text-white/90 max-w-2xl mb-8">
+        <p className="text-lg tablet:text-xl text-white/90 max-w-2xl mb-8">
           Entrenamiento experto, formación personalizada y programas inmersivos diseñados para elevar tus habilidades
           deportivas al siguiente nivel.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4">
           <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 flex items-center gap-2">
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 flex items-center gap-2 w-full sm:w-auto">
               <MessageCircle className="h-5 w-5" />
               Reservar una Sesión
             </Button>
           </a>
-          <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 border border-white">
+          <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 border border-white w-full sm:w-auto">
             Explorar Programas
           </Button>
         </div>

@@ -18,6 +18,9 @@ const config: Config = {
       },
     },
     extend: {
+      screens: {
+        tablet: "980px", // Nuevo breakpoint personalizado en 980px
+      },
       colors: {
         blue: {
           50: "#e6eeff",

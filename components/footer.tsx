@@ -3,7 +3,9 @@ import { Facebook, Instagram, Mail, Phone, MapPin, MessageCircle, ExternalLink }
 import { getWhatsAppLink } from "@/utils/whatsapp-link"
 
 // Obtener el enlace de WhatsApp correctamente formateado
-const whatsappLink = getWhatsAppLink()
+const whatsappLink = getWhatsAppLink(
+  "Hola, me gustaria obtener mas informacion sobre los planes de entrenamiento. Muchas gracias!",
+)
 
 // Componente personalizado para el icono de TikTok
 function TikTok({ className }: { className?: string }) {
@@ -29,7 +31,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 tablet:grid-cols-4 gap-8">
           <div>
             <div className="mb-4">
               <img src="/images/horizontal-logo-white.png" alt="GOAT Sports Logo" className="h-12 w-auto" />
@@ -143,7 +145,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-center items-center">
+        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col tablet:flex-row justify-center items-center">
           <p className="text-gray-400 text-sm">
             &copy; {new Date().getFullYear()} GOAT Sports. Todos los derechos reservados.
           </p>

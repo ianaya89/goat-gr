@@ -129,9 +129,9 @@ export default function CampusSection() {
         </div>
       )}
 
-      {/* Past Campus */}
+      {/* Past Campus - Cambiado a 1 columna para tablet y menos */}
       {activeTab === "past" && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 tablet:grid-cols-3 gap-8">
           {campusEvents.map((event) => (
             <Card key={event.id} className="overflow-hidden">
               <div className="h-48 overflow-hidden">
