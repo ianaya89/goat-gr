@@ -1,11 +1,9 @@
 import Link from "next/link"
-import { Facebook, Instagram, Mail, Phone, MapPin, MessageCircle } from "lucide-react"
+import { Facebook, Instagram, Mail, Phone, MapPin, MessageCircle, ExternalLink } from "lucide-react"
+import { getWhatsAppLink } from "@/utils/whatsapp-link"
 
-// Mensaje predeterminado codificado para URL
-const whatsappMessage = encodeURIComponent(
-  "Hola, me gustaria obtener mas informacion sobre los planes de entrenamiento. Muchas gracias!",
-)
-const whatsappLink = `https://wa.me/5491126578585?text=${whatsappMessage}`
+// Obtener el enlace de WhatsApp correctamente formateado
+const whatsappLink = getWhatsAppLink()
 
 // Componente personalizado para el icono de TikTok
 function TikTok({ className }: { className?: string }) {
@@ -122,16 +120,6 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-
-            {/* Trabaja con nosotros - Badge */}
-            <div className="mt-6">
-              <a
-                href="mailto:jobs@goatsports.ar"
-                className="inline-block bg-blue-600/20 text-blue-400 hover:bg-blue-600/30 transition-colors px-4 py-2 rounded-full font-medium"
-              >
-                Unite a nuestro equipo
-              </a>
-            </div>
           </div>
 
           <div>
@@ -141,6 +129,17 @@ export default function Footer() {
                 <span className="font-medium">Lunes a Viernes:</span> 8:00 - 21:00
               </li>
             </ul>
+
+            {/* Trabaja con nosotros - Badge (Movido aquí) */}
+            <div className="mt-6">
+              <a
+                href="mailto:jobs@goatsports.ar"
+                className="inline-flex items-center bg-blue-600/20 text-blue-400 hover:bg-blue-600/30 transition-colors px-4 py-2 rounded-full font-medium"
+              >
+                Unite a nuestro equipo
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </a>
+            </div>
           </div>
         </div>
 

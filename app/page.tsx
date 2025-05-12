@@ -10,12 +10,10 @@ import CampusSection from "@/components/campus-section"
 import HeroSection from "@/components/hero-section"
 import ContactForm from "@/components/contact-form"
 import { ArrowRight } from "lucide-react"
+import { getWhatsAppLink } from "@/utils/whatsapp-link"
 
-// Mensaje predeterminado codificado para URL
-const whatsappMessage = encodeURIComponent(
-  "Hola, me gustaria obtener mas informacion sobre los planes de entrenamiento. Muchas gracias!",
-)
-const whatsappLink = `https://wa.me/5491126578585?text=${whatsappMessage}`
+// Obtener el enlace de WhatsApp correctamente formateado
+const whatsappLink = getWhatsAppLink()
 
 export default function Home() {
   return (

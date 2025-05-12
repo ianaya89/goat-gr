@@ -3,12 +3,10 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, MessageCircle } from "lucide-react"
+import { getWhatsAppLink } from "@/utils/whatsapp-link"
 
-// Mensaje predeterminado codificado para URL
-const whatsappMessage = encodeURIComponent(
-  "Hola, me gustaria obtener mas informacion sobre los planes de entrenamiento. Muchas gracias!",
-)
-const whatsappLink = `https://wa.me/5491126578585?text=${whatsappMessage}`
+// Obtener el enlace de WhatsApp correctamente formateado
+const whatsappLink = getWhatsAppLink()
 
 const heroImages = [
   {
@@ -133,34 +131,38 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 h-full flex flex-col items-center justify-center text-center">
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-          <span className="block mb-2">Entrenate con nosotros</span>
-          <span className="relative inline-block overflow-hidden h-[1.2em] min-w-[280px] md:min-w-[400px]">
-            <span
-              className={`absolute w-full transition-all duration-500 ease-in-out ${
-                isChanging ? "opacity-0 transform -translate-y-10" : "opacity-100 transform translate-y-0"
-              }`}
+        <h1 className="text-4xl md:text-6xl font-bold text-white">
+          <span className="block mb-4">Entrenate con GOAT para</span>
+
+          {/* Contenedor para el texto animado */}
+          <div className="relative h-[1.5em] flex items-center justify-center mb-6">
+            {/* Contenedor con fondo blanco */}
+            <div
+              className={`
+                bg-white rounded-md px-4 py-1 inline-block
+                transition-all duration-500 ease-in-out
+                ${isChanging ? "opacity-0 -translate-y-4" : "opacity-100 translate-y-0"}
+              `}
             >
-              {/* Contenedor con fondo blanco */}
-              <span className="inline-block bg-white px-4 py-1 rounded-md">
-                {/* Texto con gradiente */}
-                <span
-                  className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
-                  style={{
-                    backgroundSize: "200% auto",
-                    animation: "gradient 3s linear infinite",
-                  }}
-                >
-                  {displayedObjetivo}
-                </span>
+              {/* Texto con gradiente */}
+              <span
+                className="
+                  bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 
+                  bg-clip-text text-transparent inline-block
+                  animate-gradient
+                "
+              >
+                {displayedObjetivo}
               </span>
-            </span>
-          </span>
+            </div>
+          </div>
         </h1>
+
         <p className="text-xl text-white/90 max-w-2xl mb-8">
           Entrenamiento experto, formación personalizada y programas inmersivos diseñados para elevar tus habilidades
           deportivas al siguiente nivel.
         </p>
+
         <div className="flex flex-col sm:flex-row gap-4">
           <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
             <Button size="lg" className="bg-blue-600 hover:bg-blue-700 flex items-center gap-2">
