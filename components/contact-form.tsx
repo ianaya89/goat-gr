@@ -21,16 +21,43 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    setFormState((prev) => ({ ...prev, submitting: true }))
+    setFormState((prev) => ({ ...prev, submitting: true, error: false }))
 
-    // Simulación de envío de formulario
-    setTimeout(() => {
+    try {
+      // Enviar datos a Formspree usando el endpoint proporcionado
+      const response = await fetch("https://formspree.io/f/xgvknbkj", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: formState.name,
+          email: formState.email,
+          phone: formState.phone,
+          message: formState.message,
+        }),
+      })
+
+      if (response.ok) {
+        // Éxito
+        setFormState((prev) => ({
+          ...prev,
+          submitted: true,
+          submitting: false,
+        }))
+      } else {
+        // Error
+        throw new Error("Error al enviar el formulario")
+      }
+    } catch (error) {
+      console.error("Error al enviar el formulario:", error)
       setFormState((prev) => ({
         ...prev,
-        submitted: true,
         submitting: false,
+        error: true,
       }))
-    }, 1500)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -47,7 +74,16 @@ export default function ContactForm() {
             <p>Gracias por contactarnos. Nos pondremos en contacto contigo lo antes posible.</p>
           </div>
           <Button
-            onClick={() => setFormState((prev) => ({ ...prev, submitted: false }))}
+            onClick={() =>
+              setFormState((prev) => ({
+                ...prev,
+                submitted: false,
+                name: "",
+                email: "",
+                phone: "",
+                message: "",
+              }))
+            }
             className="bg-white text-blue-600 hover:bg-white/90"
           >
             Enviar otro mensaje
@@ -60,7 +96,7 @@ export default function ContactForm() {
   return (
     <Card className="bg-white/10 backdrop-blur-sm border-white/20">
       <CardContent className="p-6">
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} method="POST" className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-white mb-1">
@@ -124,6 +160,12 @@ export default function ContactForm() {
               required
             ></textarea>
           </div>
+
+          {formState.error && (
+            <div className="bg-red-500/20 text-white p-3 rounded-lg">
+              <p>Hubo un error al enviar tu mensaje. Por favor, intenta nuevamente.</p>
+            </div>
+          )}
 
           <div className="flex justify-center pt-2">
             <Button

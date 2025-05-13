@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import ServiceCard from "@/components/service-card"
@@ -9,7 +8,7 @@ import ConsultingServices from "@/components/consulting-services"
 import CampusSection from "@/components/campus-section"
 import HeroSection from "@/components/hero-section"
 import ContactForm from "@/components/contact-form"
-import { ArrowRight } from "lucide-react"
+import NewsletterForm from "@/components/newsletter-form"
 import { getWhatsAppLink } from "@/utils/whatsapp-link"
 import { servicesData } from "@/data/services-data"
 
@@ -30,7 +29,9 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-3xl tablet:text-4xl font-bold mb-4">Nuestros Programas</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Programas completos adaptados a deportistas de todos los niveles y ambiciones.
+              Programas completos diseñados para potenciar el desarrollo deportivo en todas sus facetas. Ofrecemos
+              entrenamientos específicos para cada disciplina, adaptados a las necesidades individuales y objetivos de
+              cada deportista, desde principiantes hasta profesionales.
             </p>
           </div>
 
@@ -165,24 +166,7 @@ export default function Home() {
       {/* Newsletter Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-xl mx-auto text-center">
-            <h2 className="text-2xl tablet:text-3xl font-bold mb-4">Mantente Actualizado</h2>
-            <p className="text-gray-600 mb-6">
-              Suscríbete a nuestro boletín para recibir consejos de entrenamiento, anuncios de eventos y ofertas
-              exclusivas.
-            </p>
-            <form className="flex flex-col sm:flex-row gap-2">
-              <input
-                type="email"
-                placeholder="Ingresa tu email"
-                className="flex-grow px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
-                required
-              />
-              <Button type="submit" className="bg-blue-600 hover:bg-blue-700 w-full sm:w-auto h-[50px]">
-                Suscribirse <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </form>
-          </div>
+          <NewsletterForm />
         </div>
       </section>
 

@@ -2,11 +2,11 @@ import type { ServiceDetails } from "@/components/service-modal"
 
 export const servicesData: ServiceDetails[] = [
   {
-    title: "Entrenamiento Personal",
+    title: "Entrenamiento Personalizado",
     description:
       "Sesiones individuales adaptadas a tus necesidades específicas. Desarrolla tus habilidades en hockey, fútbol, rugby o alto rendimiento con atención personalizada de nuestros entrenadores expertos.",
     longDescription:
-      "Nuestro programa de entrenamiento personal está diseñado para maximizar tu potencial deportivo a través de sesiones individualizadas. Trabajamos con un enfoque integral que abarca aspectos técnicos, tácticos, físicos y mentales. Cada sesión es planificada específicamente para ti, considerando tus objetivos, nivel actual y posición de juego. Nuestros entrenadores expertos utilizan metodologías avanzadas y tecnología de análisis para identificar áreas de mejora y desarrollar un plan progresivo que te lleve al siguiente nivel.",
+      "Nuestro programa de entrenamiento personalizado está diseñado para maximizar tu potencial deportivo a través de sesiones individualizadas. Trabajamos con un enfoque integral que abarca aspectos técnicos, tácticos, físicos y mentales. Cada sesión es planificada específicamente para ti, considerando tus objetivos, nivel actual y posición de juego. Nuestros entrenadores expertos utilizan metodologías avanzadas y tecnología de análisis para identificar áreas de mejora y desarrollar un plan progresivo que te lleve al siguiente nivel.",
     schedule: [
       "Lunes a Viernes: 8:00 - 21:00 (sesiones de 60 o 90 minutos)",
       "Sábados: 9:00 - 13:00 (sesiones de 60 o 90 minutos)",
@@ -42,11 +42,11 @@ export const servicesData: ServiceDetails[] = [
     ],
   },
   {
-    title: "Academia de Hockey y Rugby",
+    title: "Academias de Hockey y Rugby",
     description:
       "Únete a nuestro programa estructurado con sesiones regulares de entrenamiento, talleres de desarrollo de habilidades y oportunidades de juego competitivo en hockey y rugby.",
     longDescription:
-      "La Academia GOAT Sports ofrece un programa integral de desarrollo para jugadores de hockey y rugby de todos los niveles. Nuestro enfoque estructurado combina entrenamiento técnico, táctico, físico y mental, siguiendo una metodología progresiva que ha demostrado resultados excepcionales. Los participantes entrenan en grupos reducidos organizados por edad y nivel, lo que permite una atención personalizada dentro de un entorno de equipo. El programa incluye sesiones regulares de entrenamiento, talleres especializados, partidos amistosos y la participación en torneos locales e internacionales.",
+      "Las Academias GOAT Sports ofrecen un programa integral de desarrollo para jugadores de hockey y rugby de todos los niveles. Nuestro enfoque estructurado combina entrenamiento técnico, táctico, físico y mental, siguiendo una metodología progresiva que ha demostrado resultados excepcionales. Los participantes entrenan en grupos reducidos organizados por edad y nivel, lo que permite una atención personalizada dentro de un entorno de equipo. El programa incluye sesiones regulares de entrenamiento, talleres especializados, partidos amistosos y la participación en torneos locales e internacionales.",
     schedule: [
       "Hockey - Categoría Sub-12: Lunes y Miércoles 17:30 - 19:00",
       "Hockey - Categoría Sub-16: Lunes y Miércoles 19:00 - 20:30",
@@ -72,15 +72,15 @@ export const servicesData: ServiceDetails[] = [
         alt: "Entrenamiento de academia de hockey",
       },
       {
-        src: "/placeholder.svg?height=300&width=400&query=rugby youth training",
+        src: "/placeholder.svg?key=ir33c",
         alt: "Entrenamiento juvenil de rugby",
       },
       {
-        src: "/placeholder.svg?height=300&width=400&query=hockey team practice",
+        src: "/placeholder.svg?key=ch9w6",
         alt: "Práctica de equipo de hockey",
       },
       {
-        src: "/placeholder.svg?height=300&width=400&query=rugby skills workshop",
+        src: "/placeholder.svg?key=3irnl",
         alt: "Taller de habilidades de rugby",
       },
     ],
@@ -112,15 +112,15 @@ export const servicesData: ServiceDetails[] = [
     ],
     images: [
       {
-        src: "/placeholder.svg?height=300&width=400&query=hockey field synthetic turf",
+        src: "/placeholder.svg?key=ockwz",
         alt: "Campo de hockey con césped sintético",
       },
       {
-        src: "/placeholder.svg?height=300&width=400&query=rugby team training session",
+        src: "/rugby-team-training.png",
         alt: "Sesión de entrenamiento de equipo de rugby",
       },
       {
-        src: "/placeholder.svg?height=300&width=400&query=sports team video analysis",
+        src: "/placeholder.svg?key=vqjfb",
         alt: "Análisis de video para equipos deportivos",
       },
       {

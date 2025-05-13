@@ -1,5 +1,7 @@
 "use client"
 
+import type React from "react"
+
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, MessageCircle } from "lucide-react"
@@ -83,6 +85,15 @@ export default function HeroSection() {
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? heroImages.length - 1 : prevIndex - 1))
   }
 
+  // Función para manejar el scroll suave a la sección de programas
+  const scrollToPrograms = (e: React.MouseEvent) => {
+    e.preventDefault()
+    const programsSection = document.getElementById("services")
+    if (programsSection) {
+      programsSection.scrollIntoView({ behavior: "smooth", block: "start" })
+    }
+  }
+
   return (
     <section className="relative h-[80vh] min-h-[600px]">
       {/* Image Slider */}
@@ -161,8 +172,8 @@ export default function HeroSection() {
         </h1>
 
         <p className="text-xl text-white/90 max-w-2xl mb-8">
-          Entrenamiento experto, formación personalizada y programas inmersivos diseñados para elevar tus habilidades
-          deportivas al siguiente nivel.
+          Entrenamiento experto con planes personalizados que se adaptan a cada necesidad deportiva. Programas
+          inmersivos diseñados para elevar tus habilidades al siguiente nivel, sea cual sea tu punto de partida.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4">
@@ -172,7 +183,11 @@ export default function HeroSection() {
               Reservar una Sesión
             </Button>
           </a>
-          <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 border border-white w-full sm:w-auto">
+          <Button
+            size="lg"
+            className="bg-white text-blue-600 hover:bg-blue-50 border border-white w-full sm:w-auto"
+            onClick={scrollToPrograms}
+          >
             Explorar Programas
           </Button>
         </div>
