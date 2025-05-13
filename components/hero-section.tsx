@@ -133,34 +133,34 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 h-full flex flex-col items-center justify-center text-center">
-        <h1 className="text-3xl sm:text-4xl tablet:text-6xl font-bold text-white">
-          <span className="block mb-4">Entrenate con GOAT para</span>
+        <h1 className="text-4xl md:text-5xl tablet:text-6xl font-bold text-white">
+          <span className="block mb-4">Entrena con GOAT para</span>
 
           {/* Contenedor para el texto animado */}
-          <div className="relative h-[1.5em] flex items-center justify-center mb-6">
-            {/* Contenedor con fondo blanco */}
-            <div
+          <div className="relative h-[2em] flex items-center justify-center mb-6">
+            {/* Texto con gradiente */}
+            <span
               className={`
-                bg-white rounded-md px-4 py-1 inline-block
+                inline-block
+                text-5xl sm:text-6xl tablet:text-7xl
                 transition-all duration-500 ease-in-out
                 ${isChanging ? "opacity-0 -translate-y-4" : "opacity-100 translate-y-0"}
               `}
+              style={{
+                background: "linear-gradient(to right, #3b82f6, #1d4ed8, #2563eb, #60a5fa)",
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+                color: "transparent",
+                backgroundSize: "200% auto",
+                animation: "gradient 3s linear infinite",
+              }}
             >
-              {/* Texto con gradiente */}
-              <span
-                className="
-                  bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 
-                  bg-clip-text text-transparent inline-block
-                  animate-gradient text-2xl sm:text-3xl tablet:text-4xl
-                "
-              >
-                {displayedObjetivo}
-              </span>
-            </div>
+              {displayedObjetivo}
+            </span>
           </div>
         </h1>
 
-        <p className="text-lg tablet:text-xl text-white/90 max-w-2xl mb-8">
+        <p className="text-xl text-white/90 max-w-2xl mb-8">
           Entrenamiento experto, formación personalizada y programas inmersivos diseñados para elevar tus habilidades
           deportivas al siguiente nivel.
         </p>
