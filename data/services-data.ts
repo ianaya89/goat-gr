@@ -24,7 +24,7 @@ export const servicesData: ServiceDetails[] = [
     ],
     images: [
       {
-        src: "/placeholder.svg?key=ywndj",
+        src: "/images/personal-training.jpg",
         alt: "Entrenamiento personal de hockey",
       },
       {
@@ -68,7 +68,7 @@ export const servicesData: ServiceDetails[] = [
     ],
     images: [
       {
-        src: "/placeholder.svg?key=9ze0c",
+        src: "/images/hockey-academy.jpg",
         alt: "Entrenamiento de academia de hockey",
       },
       {
@@ -112,8 +112,8 @@ export const servicesData: ServiceDetails[] = [
     ],
     images: [
       {
-        src: "/placeholder.svg?key=ockwz",
-        alt: "Campo de hockey con césped sintético",
+        src: "/images/team-rental.jpg",
+        alt: "Equipo de hockey entrenando",
       },
       {
         src: "/rugby-team-training.png",
@@ -124,7 +124,7 @@ export const servicesData: ServiceDetails[] = [
         alt: "Análisis de video para equipos deportivos",
       },
       {
-        src: "/placeholder.svg?height=300&width=400&query=sports facility locker room",
+        src: "/placeholder.svg?key=7zmrb",
         alt: "Vestuarios de instalaciones deportivas",
       },
     ],

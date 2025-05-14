@@ -10,15 +10,18 @@ const whatsappLink = getWhatsAppLink(
 export default function ConsultingServices() {
   return (
     <div className="container mx-auto px-4">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div className="lg:h-[600px] order-2 lg:order-1">
-          <img
-            src="/field-hockey-consultation.png"
-            alt="Servicios de Consultoría GOAT Sports"
-            className="rounded-lg shadow-lg w-full h-full object-cover"
-          />
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="lg:col-span-7 order-2 lg:order-1 relative">
+          <div className="rounded-lg shadow-lg overflow-hidden h-[400px]">
+            <img
+              src="/images/consulting-services.jpg"
+              alt="Servicios de Consultoría GOAT Sports"
+              className="w-full h-full object-cover"
+              style={{ objectPosition: "center center" }}
+            />
+          </div>
         </div>
-        <div className="order-1 lg:order-2">
+        <div className="lg:col-span-5 order-1 lg:order-2">
           <h2 className="text-3xl font-bold mb-6">Servicios de Consultoría</h2>
 
           <div className="space-y-6">
@@ -87,7 +90,7 @@ export default function ConsultingServices() {
             </div>
           </div>
 
-          <div className="mt-8 flex justify-center">
+          <div className="mt-8 flex justify-center lg:justify-start">
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
               <Button className="bg-blue-600 hover:bg-blue-700 flex items-center gap-2">
                 <MessageCircle className="h-5 w-5" />

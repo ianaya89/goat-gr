@@ -5,16 +5,17 @@ import { UserCog, GraduationCap, Tent, Users, Trophy } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import ServiceModal, { type ServiceDetails } from "./service-modal"
+import type { JSX } from "react"
 
 interface ServiceCardProps {
   title: string
   description: string
   icon: string
-  imageQuery: string
+  imageSrc: string
   details: ServiceDetails
 }
 
-export default function ServiceCard({ title, description, icon, imageQuery, details }: ServiceCardProps) {
+export default function ServiceCard({ title, description, icon, imageSrc, details }: ServiceCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const getIcon = (): JSX.Element => {
@@ -39,7 +40,7 @@ export default function ServiceCard({ title, description, icon, imageQuery, deta
       <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg h-full">
         <div className="h-48 overflow-hidden">
           <img
-            src={`/abstract-geometric-shapes.png?key=445u9&height=300&width=500&query=${imageQuery}`}
+            src={imageSrc || "/placeholder.svg"}
             alt={title}
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
           />

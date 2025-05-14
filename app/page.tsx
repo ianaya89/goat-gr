@@ -41,21 +41,21 @@ export default function Home() {
               title={servicesData[0].title}
               description={servicesData[0].description}
               icon="UserCog"
-              imageQuery="sports personal training session"
+              imageSrc="/images/personal-training.jpg"
               details={servicesData[0]}
             />
             <ServiceCard
               title={servicesData[1].title}
               description={servicesData[1].description}
               icon="GraduationCap"
-              imageQuery="hockey and rugby academy training"
+              imageSrc="/images/hockey-academy.jpg"
               details={servicesData[1]}
             />
             <ServiceCard
               title={servicesData[2].title}
               description={servicesData[2].description}
               icon="Users"
-              imageQuery="team training session sports"
+              imageSrc="/images/team-rental.jpg"
               details={servicesData[2]}
             />
           </div>

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { Award, Zap, Shield, MessageCircle } from "lucide-react"
+import { MessageCircle } from "lucide-react"
 import { getWhatsAppLink } from "@/utils/whatsapp-link"
 
 // Obtener el enlace de WhatsApp correctamente formateado
@@ -11,7 +11,7 @@ export default function TrainingCenter() {
       {/* Main Facility Image */}
       <div className="relative rounded-xl overflow-hidden mb-12">
         <img
-          src="/modern-field-hockey-facility.png"
+          src="/images/training-center.jpg"
           alt="Centro de Entrenamiento GOAT Sports"
           className="w-full h-[300px] sm:h-[400px] tablet:h-[500px] object-cover"
         />
@@ -20,60 +20,7 @@ export default function TrainingCenter() {
             <h3 className="text-xl sm:text-2xl tablet:text-3xl font-bold mb-2">Instalaciones de Clase Mundial</h3>
             <p className="text-base sm:text-lg tablet:text-xl max-w-2xl">
               Nuestro centro de entrenamiento cuenta con la última tecnología y equipamiento para maximizar tu
-              desarrollo en hockey sobre césped.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Features Grid - Cambiado a 1 columna para tablet y menos */}
-      <div className="grid grid-cols-1 tablet:grid-cols-3 gap-8 mb-12">
-        <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <img
-            src="/images/synthetic-field.png"
-            alt="Césped Sintético Profesional"
-            className="w-full h-48 object-cover"
-          />
-          <div className="p-6">
-            <div className="flex items-center mb-3">
-              <Award className="h-5 w-5 text-blue-600 mr-2" />
-              <h4 className="font-bold text-lg">Césped Sintético Profesional</h4>
-            </div>
-            <p className="text-gray-600">
-              Superficie de juego de última generación que cumple con los estándares internacionales para un
-              entrenamiento óptimo.
-            </p>
-          </div>
-        </div>
-
-        <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <img src="/images/training-gym.png" alt="Gimnasio de Alto Rendimiento" className="w-full h-48 object-cover" />
-          <div className="p-6">
-            <div className="flex items-center mb-3">
-              <Zap className="h-5 w-5 text-blue-600 mr-2" />
-              <h4 className="font-bold text-lg">Gimnasio de Alto Rendimiento</h4>
-            </div>
-            <p className="text-gray-600">
-              Equipado con tecnología avanzada para el entrenamiento de fuerza, resistencia y recuperación específica
-              para hockey.
-            </p>
-          </div>
-        </div>
-
-        <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <img
-            src="/images/video-analysis-room.png"
-            alt="Campo Físico Cognitivo"
-            className="w-full h-48 object-cover"
-          />
-          <div className="p-6">
-            <div className="flex items-center mb-3">
-              <Shield className="h-5 w-5 text-blue-600 mr-2" />
-              <h4 className="font-bold text-lg">Campo Físico Cognitivo</h4>
-            </div>
-            <p className="text-gray-600">
-              Espacio especializado para el desarrollo de habilidades cognitivas y físicas, mejorando la toma de
-              decisiones y el rendimiento en el campo.
+              desarrollo deportivo en un ambiente profesional.
             </p>
           </div>
         </div>
