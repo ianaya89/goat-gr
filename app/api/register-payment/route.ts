@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
 import { google } from "googleapis"
 
-// Función mejorada para manejar la autenticación con Google Sheets
+// Función para autenticar con Google Sheets
 async function getGoogleSheetsAuth() {
   try {
     // Obtener las credenciales desde las variables de entorno
@@ -21,10 +21,6 @@ async function getGoogleSheetsAuth() {
     if (privateKey.includes("\\n")) {
       privateKey = privateKey.replace(/\\n/g, "\n")
     }
-
-    console.log("Intentando autenticar con Google Sheets...")
-    console.log("Client Email:", clientEmail)
-    // No imprimir la clave privada por seguridad
 
     // Crear el cliente de autenticación
     const auth = new google.auth.GoogleAuth({
@@ -47,11 +43,11 @@ async function getGoogleSheetsAuth() {
   }
 }
 
-// Función para crear una hoja si no existe
-async function ensureSheetExists(sheets: any, spreadsheetId: string, sheetName: string) {
-  try {
-    console.log(`Verificando si la hoja "${sheetName}" existe...`)
+// Función para asegurarse de que la hoja de pagos existe
+async function ensurePaymentsSheetExists(sheets: any, spreadsheetId: string) {
+  const sheetName = "Pagos Campus"
 
+  try {
     // Obtener todas las hojas del documento
     const sheetsResponse = await sheets.spreadsheets.get({
       spreadsheetId,
@@ -62,7 +58,6 @@ async function ensureSheetExists(sheets: any, spreadsheetId: string, sheetName: 
     const existingSheet = sheetsResponse.data.sheets?.find((sheet: any) => sheet.properties?.title === sheetName)
 
     if (existingSheet) {
-      console.log(`Hoja "${sheetName}" encontrada con ID: ${existingSheet.properties?.sheetId}`)
       return existingSheet.properties?.sheetId
     }
 
@@ -85,19 +80,17 @@ async function ensureSheetExists(sheets: any, spreadsheetId: string, sheetName: 
     })
 
     const newSheetId = addSheetResponse.data.replies?.[0]?.addSheet?.properties?.sheetId
-    console.log(`Hoja "${sheetName}" creada con ID: ${newSheetId}`)
 
     // Añadir encabezados
     await sheets.spreadsheets.values.update({
       spreadsheetId,
-      range: `'${sheetName}'!A1:G1`,
+      range: `'${sheetName}'!A1:E1`,
       valueInputOption: "USER_ENTERED",
       requestBody: {
-        values: [["Nombre", "Email", "Teléfono", "Edad", "Experiencia", "Club", "Fecha de Registro"]],
+        values: [["ID de Pago", "Estado", "Referencia Externa", "Fecha de Registro", "Detalles"]],
       },
     })
 
-    console.log(`Encabezados añadidos a la hoja "${sheetName}"`)
     return newSheetId
   } catch (error) {
     console.error(`Error al verificar/crear la hoja "${sheetName}":`, error)
@@ -108,16 +101,15 @@ async function ensureSheetExists(sheets: any, spreadsheetId: string, sheetName: 
 export async function POST(request: Request) {
   try {
     const data = await request.json()
-    const { name, email, phone, age, experience, club } = data
+    const { paymentId, status, externalReference } = data
 
     // Validar datos requeridos
-    if (!name || !email || !phone || !age || !experience) {
-      return NextResponse.json({ success: false, message: "Faltan campos requeridos" }, { status: 400 })
+    if (!paymentId || !status) {
+      return NextResponse.json({ success: false, message: "Faltan datos requeridos" }, { status: 400 })
     }
 
-    // ID de la hoja de cálculo y nombre de la hoja
+    // ID de la hoja de cálculo
     const spreadsheetId = process.env.GOOGLE_SHEETS_SPREADSHEET_ID
-    const sheetName = "Inscripciones Campus"
 
     if (!spreadsheetId) {
       console.error("Error: GOOGLE_SHEETS_SPREADSHEET_ID no está configurada")
@@ -126,9 +118,6 @@ export async function POST(request: Request) {
         { status: 500 },
       )
     }
-
-    console.log(`Procesando inscripción para: ${email} con ID de hoja: ${spreadsheetId}`)
-    console.log(`Cuenta de servicio utilizada: ${process.env.GOOGLE_SHEETS_CLIENT_EMAIL}`)
 
     // Obtener la instancia autenticada de Google Sheets
     let sheets
@@ -146,53 +135,15 @@ export async function POST(request: Request) {
       )
     }
 
-    // Verificar que la hoja existe y que tenemos permisos
+    // Asegurarse de que la hoja de pagos existe
     try {
-      console.log("Verificando acceso a la hoja de cálculo...")
-      const testResponse = await sheets.spreadsheets.get({
-        spreadsheetId,
-        fields: "properties.title",
-      })
-
-      console.log("Acceso verificado. Título de la hoja:", testResponse.data.properties?.title)
-    } catch (accessError: any) {
-      console.error("Error al acceder a la hoja de cálculo:", accessError)
-
-      // Manejar específicamente el error de permisos
-      if (accessError.code === 403 || (accessError.response && accessError.response.status === 403)) {
-        return NextResponse.json(
-          {
-            success: false,
-            message: "Error de permisos: La cuenta de servicio no tiene acceso a la hoja de cálculo",
-            details:
-              "Por favor, comparte la hoja de cálculo con la cuenta de servicio y asegúrate de darle permisos de editor",
-            accountEmail: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
-            spreadsheetId,
-            error: accessError.message || "Forbidden",
-          },
-          { status: 403 },
-        )
-      }
-
-      return NextResponse.json(
-        {
-          success: false,
-          message: "Error al acceder a la hoja de cálculo",
-          error: accessError instanceof Error ? accessError.message : String(accessError),
-        },
-        { status: 500 },
-      )
-    }
-
-    // Asegurarse de que la hoja existe
-    try {
-      await ensureSheetExists(sheets, spreadsheetId, sheetName)
+      await ensurePaymentsSheetExists(sheets, spreadsheetId)
     } catch (sheetError) {
-      console.error("Error al verificar/crear la hoja:", sheetError)
+      console.error("Error al verificar/crear la hoja de pagos:", sheetError)
       return NextResponse.json(
         {
           success: false,
-          message: "Error al verificar/crear la hoja",
+          message: "Error al verificar/crear la hoja de pagos",
           error: sheetError instanceof Error ? sheetError.message : String(sheetError),
         },
         { status: 500 },
@@ -205,43 +156,40 @@ export async function POST(request: Request) {
     })
 
     // Preparar los datos para insertar en la hoja
-    const values = [[name, email, phone, age, experience, club || "No especificado", registrationDate]]
+    const values = [[paymentId, status, externalReference || "", registrationDate, ""]]
 
-    // Insertar los datos en la hoja - Usar comillas simples alrededor del nombre de la hoja
+    // Insertar los datos en la hoja
     try {
-      console.log("Insertando datos en la hoja...")
       const response = await sheets.spreadsheets.values.append({
         spreadsheetId,
-        range: `'${sheetName}'!A:G`, // Usar comillas simples alrededor del nombre de la hoja
+        range: `'Pagos Campus'!A:E`,
         valueInputOption: "USER_ENTERED",
         requestBody: {
           values,
         },
       })
 
-      console.log("Datos insertados correctamente:", response.data)
-
       return NextResponse.json({
         success: true,
-        message: "Inscripción registrada correctamente",
+        message: "Pago registrado correctamente",
       })
     } catch (appendError) {
-      console.error("Error al insertar datos:", appendError)
+      console.error("Error al insertar datos de pago:", appendError)
       return NextResponse.json(
         {
           success: false,
-          message: "Error al insertar datos en la hoja",
+          message: "Error al insertar datos de pago en la hoja",
           error: appendError instanceof Error ? appendError.message : String(appendError),
         },
         { status: 500 },
       )
     }
   } catch (error) {
-    console.error("Error general al procesar la inscripción:", error)
+    console.error("Error general al registrar el pago:", error)
     return NextResponse.json(
       {
         success: false,
-        message: "Error al procesar la inscripción",
+        message: "Error al registrar el pago",
         error: error instanceof Error ? error.message : String(error),
       },
       { status: 500 },
