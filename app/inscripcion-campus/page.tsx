@@ -56,23 +56,17 @@ export default function CampusRegistration() {
         throw new Error(result.message || "Error al enviar el formulario")
       }
 
-      // Si el método de pago es Mercado Pago, mostrar el QR
-      if (formData.paymentMethod === "mercadopago") {
-        setStatus("payment_pending")
-      } else {
-        // Si el método de pago no es Mercado Pago, mostrar éxito directamente
-        setStatus("success")
-        // Limpiar el formulario después del éxito
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          age: "",
-          experience: "",
-          club: "",
-          paymentMethod: "",
-        })
-      }
+      setStatus("success")
+      // Limpiar el formulario después del éxito
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        age: "",
+        experience: "",
+        club: "",
+        paymentMethod: "",
+      })
     } catch (error) {
       console.error("Error al enviar la inscripción:", error)
       setStatus("error")
