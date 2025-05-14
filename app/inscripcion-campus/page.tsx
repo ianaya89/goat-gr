@@ -9,31 +9,9 @@ import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Label } from "@/components/ui/label"
-import { QrCode } from "lucide-react"
-
-// Tipos para el formulario
-interface FormData {
-  name: string
-  email: string
-  phone: string
-  age: string
-  experience: string
-  club: string
-  paymentMethod: "cash" | "transfer" | "mercadopago" | ""
-}
-
-// Tipos para la respuesta del pago
-interface PaymentResponse {
-  success: boolean
-  message: string
-  paymentId?: string
-  qrCode?: string
-  qrCodeBase64?: string
-  checkoutUrl?: string
-}
 
 export default function CampusRegistration() {
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
@@ -45,19 +23,17 @@ export default function CampusRegistration() {
 
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error" | "payment_pending">("idle")
   const [errorMessage, setErrorMessage] = useState("")
-  const [paymentData, setPaymentData] = useState<{
-    qrCodeBase64?: string
-    checkoutUrl?: string
-    paymentId?: string
-  } | null>(null)
+  const [showQR, setShowQR] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handlePaymentMethodChange = (value: "cash" | "transfer" | "mercadopago") => {
+  const handlePaymentMethodChange = (value: string) => {
     setFormData((prev) => ({ ...prev, paymentMethod: value }))
+    // Si selecciona mercadopago, mostrar el QR
+    setShowQR(value === "mercadopago")
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -65,8 +41,8 @@ export default function CampusRegistration() {
     setStatus("submitting")
 
     try {
-      // Primero registramos la inscripción
-      const registrationResponse = await fetch("/api/campus-registration", {
+      // Enviar a tu endpoint de API
+      const response = await fetch("/api/campus-registration", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -74,43 +50,17 @@ export default function CampusRegistration() {
         body: JSON.stringify(formData),
       })
 
-      const registrationResult = await registrationResponse.json()
+      const result = await response.json()
 
-      if (!registrationResponse.ok) {
-        throw new Error(registrationResult.message || "Error al enviar el formulario")
+      if (!response.ok) {
+        throw new Error(result.message || "Error al enviar el formulario")
       }
 
-      // Si el método de pago es Mercado Pago, generamos el pago
+      // Si el método de pago es Mercado Pago, mostrar el QR
       if (formData.paymentMethod === "mercadopago") {
-        const paymentResponse = await fetch("/api/create-payment", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: formData.name,
-            email: formData.email,
-            description: "Inscripción Campus de Invierno 2024",
-            amount: 120000, // $120.000 ARS
-          }),
-        })
-
-        const paymentResult: PaymentResponse = await paymentResponse.json()
-
-        if (!paymentResponse.ok) {
-          throw new Error(paymentResult.message || "Error al generar el pago")
-        }
-
-        // Guardamos los datos del pago para mostrar el QR
-        setPaymentData({
-          qrCodeBase64: paymentResult.qrCodeBase64,
-          checkoutUrl: paymentResult.checkoutUrl,
-          paymentId: paymentResult.paymentId,
-        })
-
         setStatus("payment_pending")
       } else {
-        // Si el método de pago no es Mercado Pago, mostramos éxito directamente
+        // Si el método de pago no es Mercado Pago, mostrar éxito directamente
         setStatus("success")
         // Limpiar el formulario después del éxito
         setFormData({
@@ -133,7 +83,7 @@ export default function CampusRegistration() {
   // Función para manejar la finalización del pago
   const handlePaymentComplete = () => {
     setStatus("success")
-    setPaymentData(null)
+    setShowQR(false)
     // Limpiar el formulario después del éxito
     setFormData({
       name: "",
@@ -210,50 +160,42 @@ export default function CampusRegistration() {
                       <p className="text-2xl font-bold text-blue-600">$120.000 ARS</p>
                       <p className="text-sm text-gray-500">Posibilidad de pago en cuotas</p>
                     </div>
+
+                    {/* QR de Mercado Pago (visible solo cuando se selecciona) */}
+                    {showQR && (
+                      <div className="mt-6 p-4 border border-gray-200 rounded-lg">
+                        <h3 className="font-semibold text-center mb-3">Pagar con Mercado Pago</h3>
+                        <div className="flex justify-center mb-3">
+                          <img src="/mercadopago-qr.png" alt="Código QR de Mercado Pago" className="w-48 h-48" />
+                        </div>
+                        <p className="text-sm text-gray-600 text-center">
+                          Escanea este código QR con la app de Mercado Pago para pagar
+                        </p>
+                      </div>
+                    )}
                   </div>
 
                   <div>
-                    {status === "payment_pending" && paymentData ? (
+                    {status === "payment_pending" ? (
                       <div className="bg-white border border-gray-200 p-6 rounded-md">
                         <h3 className="font-bold text-lg mb-4 text-center">Pagar con Mercado Pago</h3>
 
                         <div className="flex flex-col items-center justify-center mb-6">
-                          {paymentData.qrCodeBase64 ? (
-                            <div className="mb-4">
-                              <img
-                                src={`data:image/png;base64,${paymentData.qrCodeBase64}`}
-                                alt="Código QR para pago"
-                                className="w-64 h-64"
-                              />
-                            </div>
-                          ) : (
-                            <div className="mb-4 flex items-center justify-center bg-gray-100 w-64 h-64 rounded-md">
-                              <QrCode size={48} className="text-gray-400" />
-                            </div>
-                          )}
+                          <div className="mb-4">
+                            <img src="/mercadopago-qr.png" alt="Código QR para pago" className="w-64 h-64" />
+                          </div>
 
                           <p className="text-sm text-gray-600 mb-4 text-center">
-                            Escanea el código QR con la app de Mercado Pago o haz clic en el botón para pagar online
+                            Escanea el código QR con la app de Mercado Pago para completar tu pago
                           </p>
-
-                          {paymentData.checkoutUrl && (
-                            <a
-                              href={paymentData.checkoutUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors w-full text-center"
-                            >
-                              Pagar Online
-                            </a>
-                          )}
                         </div>
 
                         <div className="mt-6 flex flex-col space-y-4">
-                          <Button onClick={handlePaymentComplete} variant="outline" className="w-full">
+                          <Button onClick={handlePaymentComplete} className="w-full bg-blue-600 hover:bg-blue-700">
                             Ya realicé el pago
                           </Button>
 
-                          <Button onClick={() => setStatus("idle")} variant="ghost" className="w-full text-gray-500">
+                          <Button onClick={() => setStatus("idle")} variant="outline" className="w-full">
                             Volver al formulario
                           </Button>
                         </div>
@@ -375,7 +317,7 @@ export default function CampusRegistration() {
                           <label className="block text-sm font-medium text-gray-700 mb-3">Método de pago</label>
                           <RadioGroup
                             value={formData.paymentMethod}
-                            onValueChange={(value) => handlePaymentMethodChange(value as any)}
+                            onValueChange={handlePaymentMethodChange}
                             className="flex flex-col space-y-3"
                             required
                           >
