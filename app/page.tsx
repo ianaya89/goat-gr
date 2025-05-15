@@ -85,18 +85,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Campus Section */}
-      <section
-        className="py-16 tablet:py-24 relative overflow-hidden"
-        id="campus"
-        style={{
-          background: "linear-gradient(135deg, #00237c 0%, #1a56db 50%, #3b82f6 100%)",
-        }}
-      >
+      {/* Campus Section - Ahora con fondo blanco */}
+      <section className="py-16 tablet:py-24 bg-white" id="campus">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl tablet:text-4xl font-bold mb-4 text-white">Campus</h2>
-            <p className="text-white/90 max-w-2xl mx-auto">
+            <h2 className="text-3xl tablet:text-4xl font-bold mb-4">Campus</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
               Experiencias inmersivas deportivas para jugadores de todos los niveles.
             </p>
           </div>
@@ -105,12 +99,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Consulting Services Section */}
-      <section className="py-16 tablet:py-24 bg-white" id="consulting">
+      {/* Consulting Services Section - Ahora con gradiente azul */}
+      <section
+        className="py-16 tablet:py-24 relative overflow-hidden"
+        id="consulting"
+        style={{
+          background: "linear-gradient(135deg, #00237c 0%, #1a56db 50%, #3b82f6 100%)",
+        }}
+      >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl tablet:text-4xl font-bold mb-4">Consultoría</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl tablet:text-4xl font-bold mb-4 text-white">Consultoría</h2>
+            <p className="text-white/90 max-w-2xl mx-auto">
               Servicios profesionales de consultoría deportiva para clubes, colegios y countries que buscan elevar su
               nivel deportivo.
             </p>
@@ -131,31 +131,31 @@ export default function Home() {
           </div>
 
           {/* Cambiado a 1 columna para tablet y menos */}
-          <div className="grid grid-cols-1 tablet:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 tablet:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <TestimonialCard
-              quote="El programa de entrenamiento personal en GOAT Sports transformó completamente mi juego. Mis habilidades técnicas y conciencia táctica mejoraron dramáticamente en solo unos meses."
-              name="Sara Jiménez"
-              title="Jugadora Universitaria"
+              quote="Entrenar en Goat, no solo potenció y llevó a otro nivel mis habilades técnicas y físicas, sino que además, es un lugar con una energía y clima increíbles que te empujan a ir por más y donde de verdad aprendes de los mejores"
+              name="Angie Belosio"
+              title="Jugadora de Banco Nacion"
               imageQuery="female field hockey player portrait"
             />
             <TestimonialCard
-              quote="El enfoque estructurado de la academia me ayudó a desarrollar una rutina de práctica consistente. Los entrenadores son increíblemente conocedores y solidarios."
-              name="Miguel Chen"
-              title="Jugador de Secundaria"
-              imageQuery="male field hockey player portrait"
-            />
-            <TestimonialCard
-              quote="El campus de verano fue lo más destacado de mi año. Hice grandes amigos, aprendí mucho y me divertí muchísimo. No puedo esperar para volver el próximo verano."
-              name="Emma Rodríguez"
-              title="Jugadora Juvenil"
+              quote="Disfruto mucho los campus de GOAT! Porque me permite mejorar mis habilidades y aprender nuevos gestos técnicos. Los profes son Increíbles!!! siempre están pendientes de nosotros cuidándonos en todo momento"
+              name="Martina Giannini"
+              title="Jugadora de GEBA"
               imageQuery="young female field hockey player portrait"
             />
           </div>
         </div>
       </section>
 
-      {/* Contact Section - Reemplazado con formulario */}
-      <section className="py-16 tablet:py-24 bg-blue-600 text-white" id="contact">
+      {/* Contact Section - Ahora con gradiente */}
+      <section
+        className="py-16 tablet:py-24 text-white relative overflow-hidden"
+        id="contact"
+        style={{
+          background: "linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%)",
+        }}
+      >
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-3xl tablet:text-4xl font-bold mb-6">¿Listo para Elevar tu Juego?</h2>

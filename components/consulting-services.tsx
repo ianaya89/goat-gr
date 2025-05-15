@@ -24,16 +24,16 @@ export default function ConsultingServices() {
           />
         </div>
         <div className="lg:col-span-5 order-1 lg:order-2">
-          <h2 className="text-3xl font-bold mb-6">Servicios de Consultoría</h2>
+          <h2 className="text-2xl font-bold mb-6 text-white">Servicios de Consultoría</h2>
 
-          <div className="space-y-6">
+          <div className="space-y-5">
             <div className="flex items-start">
-              <div className="bg-blue-100 p-3 rounded-full mr-4 flex-shrink-0">
-                <Building2 className="h-5 w-5 text-blue-600" />
+              <div className="bg-white/20 p-3 rounded-full mr-4 flex-shrink-0">
+                <Building2 className="h-5 w-5 text-white" />
               </div>
               <div>
-                <h3 className="font-semibold text-lg">Consultoría para Clubes</h3>
-                <p className="text-gray-600">
+                <h3 className="font-semibold text-lg text-white">Consultoría para Clubes</h3>
+                <p className="text-white/90 text-sm">
                   Asesoramiento integral para mejorar programas de hockey, desde la estructura organizativa hasta
                   métodos de entrenamiento.
                 </p>
@@ -41,12 +41,12 @@ export default function ConsultingServices() {
             </div>
 
             <div className="flex items-start">
-              <div className="bg-blue-100 p-3 rounded-full mr-4 flex-shrink-0">
-                <GraduationCap className="h-5 w-5 text-blue-600" />
+              <div className="bg-white/20 p-3 rounded-full mr-4 flex-shrink-0">
+                <GraduationCap className="h-5 w-5 text-white" />
               </div>
               <div>
-                <h3 className="font-semibold text-lg">Programas para Colegios</h3>
-                <p className="text-gray-600">
+                <h3 className="font-semibold text-lg text-white">Programas para Colegios</h3>
+                <p className="text-white/90 text-sm">
                   Desarrollo de programas educativos de hockey adaptados al entorno escolar, integrando valores
                   deportivos con objetivos académicos.
                 </p>
@@ -54,24 +54,24 @@ export default function ConsultingServices() {
             </div>
 
             <div className="flex items-start">
-              <div className="bg-blue-100 p-3 rounded-full mr-4 flex-shrink-0">
-                <Users className="h-5 w-5 text-blue-600" />
+              <div className="bg-white/20 p-3 rounded-full mr-4 flex-shrink-0">
+                <Users className="h-5 w-5 text-white" />
               </div>
               <div>
-                <h3 className="font-semibold text-lg">Servicios para Countries</h3>
-                <p className="text-gray-600">
+                <h3 className="font-semibold text-lg text-white">Servicios para Countries</h3>
+                <p className="text-white/90 text-sm">
                   Creación y gestión de programas recreativos y competitivos para comunidades residenciales.
                 </p>
               </div>
             </div>
 
             <div className="flex items-start">
-              <div className="bg-blue-100 p-3 rounded-full mr-4 flex-shrink-0">
-                <ClipboardList className="h-5 w-5 text-blue-600" />
+              <div className="bg-white/20 p-3 rounded-full mr-4 flex-shrink-0">
+                <ClipboardList className="h-5 w-5 text-white" />
               </div>
               <div>
-                <h3 className="font-semibold text-lg">Métodos de Entrenamiento</h3>
-                <p className="text-gray-600">
+                <h3 className="font-semibold text-lg text-white">Métodos de Entrenamiento</h3>
+                <p className="text-white/90 text-sm">
                   Implementación de metodologías innovadoras basadas en las últimas tendencias y respaldadas por la
                   ciencia deportiva.
                 </p>
@@ -79,12 +79,12 @@ export default function ConsultingServices() {
             </div>
 
             <div className="flex items-start">
-              <div className="bg-blue-100 p-3 rounded-full mr-4 flex-shrink-0">
-                <Target className="h-5 w-5 text-blue-600" />
+              <div className="bg-white/20 p-3 rounded-full mr-4 flex-shrink-0">
+                <Target className="h-5 w-5 text-white" />
               </div>
               <div>
-                <h3 className="font-semibold text-lg">Clínicas Personalizadas</h3>
-                <p className="text-gray-600">
+                <h3 className="font-semibold text-lg text-white">Clínicas Personalizadas</h3>
+                <p className="text-white/90 text-sm">
                   Diseño y ejecución de clínicas adaptadas a necesidades específicas, enfocadas en áreas técnicas,
                   tácticas o físicas.
                 </p>
@@ -94,7 +94,7 @@ export default function ConsultingServices() {
 
           <div className="mt-8 flex justify-center lg:justify-start">
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-              <Button className="bg-blue-600 hover:bg-blue-700 flex items-center gap-2">
+              <Button className="bg-white text-blue-600 hover:bg-white/90 flex items-center gap-2">
                 <MessageCircle className="h-5 w-5" />
                 Solicitar Información
               </Button>

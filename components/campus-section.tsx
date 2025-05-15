@@ -73,12 +73,6 @@ export default function CampusSection() {
 
   return (
     <div className="container mx-auto px-4">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden -z-10">
-        <div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-        <div className="absolute top-0 -right-24 w-96 h-96 bg-blue-700 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-24 left-1/3 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
-      </div>
       {/* Tabs */}
       <div className="flex justify-center mb-8">
         <div className="inline-flex rounded-md shadow-sm" role="group">
@@ -86,8 +80,8 @@ export default function CampusSection() {
             type="button"
             className={`px-5 py-2.5 text-sm font-medium rounded-l-lg ${
               activeTab === "upcoming"
-                ? "bg-white text-blue-600 font-semibold"
-                : "bg-blue-700/50 text-white border border-white/20 hover:bg-blue-700/70"
+                ? "bg-blue-600 text-white font-semibold"
+                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
             }`}
             onClick={() => setActiveTab("upcoming")}
           >
@@ -97,8 +91,8 @@ export default function CampusSection() {
             type="button"
             className={`px-5 py-2.5 text-sm font-medium rounded-r-lg ${
               activeTab === "past"
-                ? "bg-white text-blue-600 font-semibold"
-                : "bg-blue-700/50 text-white border border-white/20 hover:bg-blue-700/70"
+                ? "bg-blue-600 text-white font-semibold"
+                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
             }`}
             onClick={() => setActiveTab("past")}
           >
@@ -109,7 +103,7 @@ export default function CampusSection() {
 
       {/* Upcoming Campus */}
       {activeTab === "upcoming" && (
-        <div className="bg-white rounded-xl overflow-hidden shadow-lg">
+        <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="h-64 lg:h-auto">
               <img
@@ -152,7 +146,7 @@ export default function CampusSection() {
       {activeTab === "past" && (
         <div className="grid grid-cols-1 tablet:grid-cols-3 gap-8">
           {campusEvents.map((event, index) => (
-            <Card key={event.id} className="overflow-hidden">
+            <Card key={event.id} className="overflow-hidden border border-gray-200">
               <div className="h-48 overflow-hidden">
                 <img
                   src={

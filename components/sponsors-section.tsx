@@ -22,6 +22,12 @@ const sponsorLogos: SponsorLogo[] = [
     alt: "Treos - Patrocinador Oficial",
     width: 160,
   },
+  {
+    name: "Balling",
+    src: "/images/sponsors/balling-logo.svg",
+    alt: "Balling - Patrocinador Oficial",
+    width: 140,
+  },
 ]
 
 export default function SponsorsSection() {
@@ -35,7 +41,7 @@ export default function SponsorsSection() {
   }
 
   return (
-    <section className="py-12 bg-blue-900">
+    <section className="py-12 bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-2xl font-bold text-white mb-2">Nuestros Patrocinadores</h2>
