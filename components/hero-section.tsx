@@ -89,11 +89,14 @@ export default function HeroSection() {
                 ${isChanging ? "opacity-0 transform translate-y-8" : "opacity-100 transform translate-y-0"}
               `}
               style={{
-                background: "linear-gradient(to right, #ffffff, #f0f4ff, #ffffff)",
+                background: "linear-gradient(to right, #FFD700, #FFA500, #FF8C00)",
                 WebkitBackgroundClip: "text",
                 backgroundClip: "text",
                 color: "transparent",
-                textShadow: "0 0 20px rgba(255,255,255,0.3)",
+                textShadow: "0 0 15px rgba(255, 215, 0, 0.5)",
+                fontWeight: "800",
+                animation: "gradient 3s linear infinite",
+                backgroundSize: "200% auto",
               }}
             >
               {displayedObjetivo}
@@ -102,8 +105,8 @@ export default function HeroSection() {
         </h1>
 
         <p className="text-xl text-white/90 max-w-2xl mb-8">
-          Entrenamiento experto con planes personalizados que se adaptan a cada necesidad deportiva. Programas
-          inmersivos diseñados para elevar tus habilidades al siguiente nivel, sea cual sea tu punto de partida.
+          No importa cual sea tu objetivo, nosotros tenemos un plan para llevarlo a cabo. Programas grupales y
+          personalizados, diseñados para llevarte al siguiente nivel, sea cual sea tu punto de partida.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4">
