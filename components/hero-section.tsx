@@ -76,7 +76,7 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 h-full flex flex-col items-center justify-center text-center">
         <h1 className="text-4xl md:text-5xl tablet:text-6xl font-bold text-white">
-          <span className="block mb-4">Entrena con GOAT para</span>
+          <span className="block mb-4">Veni a GOAT para</span>
 
           {/* Contenedor para el texto animado */}
           <div className="relative h-[1.5em] flex items-center justify-center mb-6 overflow-hidden">
