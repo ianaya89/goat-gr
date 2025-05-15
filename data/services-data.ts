@@ -112,19 +112,19 @@ export const servicesData: ServiceDetails[] = [
     ],
     images: [
       {
-        src: "/placeholder.svg?height=400&width=600&query=hockey%20team%20training",
+        src: "/placeholder-arx5u.png",
         alt: "Equipo de hockey entrenando",
       },
       {
-        src: "/placeholder.svg?height=400&width=600&query=rugby%20team%20training",
+        src: "/placeholder-lom5l.png",
         alt: "Sesión de entrenamiento de equipo de rugby",
       },
       {
-        src: "/placeholder.svg?height=400&width=600&query=sports%20video%20analysis",
+        src: "/placeholder-6lvip.png",
         alt: "Análisis de video para equipos deportivos",
       },
       {
-        src: "/placeholder.svg?height=400&width=600&query=sports%20facility%20locker%20rooms",
+        src: "/placeholder-y0egj.png",
         alt: "Vestuarios de instalaciones deportivas",
       },
     ],

@@ -50,8 +50,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [{ url: "/favicon-new.ico" }, { url: "/site-icon.ico" }],
-    shortcut: "/favicon-new.ico",
+    icon: [{ url: "/favicon.ico" }],
+    shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png",
     other: [
       {
@@ -121,9 +121,9 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
-        {/* Forzar la actualización del favicon con un parámetro de versión */}
-        <link rel="icon" href="/favicon-new.ico?v=2" />
-        <link rel="shortcut icon" href="/favicon-new.ico?v=2" />
+        {/* Forzar la actualización del favicon con un parámetro de versión y timestamp */}
+        <link rel="icon" href="/favicon.ico?v=3" />
+        <link rel="shortcut icon" href="/favicon.ico?v=3" />
 
         {/* Etiquetas adicionales para dispositivos Apple */}
         <meta name="apple-mobile-web-app-capable" content="yes" />

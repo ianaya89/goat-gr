@@ -27,7 +27,7 @@ export default function Home() {
       <section className="py-16 tablet:py-24 bg-white" id="services">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl tablet:text-4xl font-bold mb-4">Nuestros Programas</h2>
+            <h2 className="text-3xl tablet:text-4xl font-bold mb-4">Programas</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Programas completos diseñados para potenciar el desarrollo deportivo en todas sus facetas. Ofrecemos
               entrenamientos específicos para cada disciplina, adaptados a las necesidades individuales y objetivos de
@@ -41,14 +41,14 @@ export default function Home() {
               title={servicesData[0].title}
               description={servicesData[0].description}
               icon="UserCog"
-              imageSrc="/placeholder-5i2i6.png"
+              imageSrc="/images/personal-training.jpg"
               details={servicesData[0]}
             />
             <ServiceCard
               title={servicesData[1].title}
               description={servicesData[1].description}
               icon="GraduationCap"
-              imageSrc="/placeholder-kdqcs.png"
+              imageSrc="/images/hockey-academy.jpg"
               details={servicesData[1]}
             />
             <ServiceCard
