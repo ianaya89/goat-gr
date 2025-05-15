@@ -88,7 +88,7 @@ export const servicesData: ServiceDetails[] = [
   {
     title: "Vení a entrenar con tu equipo",
     description:
-      "Alquilá nuestras instalaciones de primer nivel para entrenamientos con tu equipo. Acceso completo a campos, equipamiento y espacios de análisis para elevar el rendimiento grupal.",
+      "Alquilá nuestras instalaciones de primer nivel para entrenamientos con tu equipo. Acceso completo a campos, equipamiento y todo lo que necesitas para entrenar.",
     longDescription:
       "Ofrecemos nuestras instalaciones de primer nivel para equipos que buscan un espacio profesional para sus entrenamientos. El alquiler incluye acceso completo a nuestros campos de juego con superficie sintética profesional, equipamiento de entrenamiento especializado, gimnasio de alto rendimiento y salas de análisis de video. Opcionalmente, podemos proporcionar entrenadores especializados para sesiones específicas o clínicas temáticas. Nuestras instalaciones son ideales para equipos de club, selecciones, equipos escolares o grupos corporativos que buscan una experiencia de entrenamiento premium.",
     schedule: [

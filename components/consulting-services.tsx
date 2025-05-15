@@ -1,9 +1,9 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { GraduationCap, Users, Building2, ClipboardList, Target, MessageCircle } from "lucide-react"
+import { Building2, GraduationCap, Users, ClipboardList, Target, MessageCircle } from "lucide-react"
 import { getWhatsAppLink } from "@/utils/whatsapp-link"
-import { useState } from "react"
+import DiagonalImageSplit from "./diagonal-image-split"
 
 // Obtener el enlace de WhatsApp correctamente formateado
 const whatsappLink = getWhatsAppLink(
@@ -11,25 +11,17 @@ const whatsappLink = getWhatsAppLink(
 )
 
 export default function ConsultingServices() {
-  const [imgError, setImgError] = useState(false)
-
   return (
     <div className="container mx-auto px-4">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         <div className="lg:col-span-7 order-2 lg:order-1 relative">
-          <div className="rounded-lg shadow-lg overflow-hidden h-[400px]">
-            <img
-              src={
-                imgError
-                  ? "/placeholder.svg?height=400&width=600&query=sports%20consulting%20services"
-                  : "/images/consulting-services.jpg"
-              }
-              alt="Servicios de Consultoría GOAT Sports"
-              className="w-full h-full object-cover"
-              style={{ objectPosition: "center center" }}
-              onError={() => setImgError(true)}
-            />
-          </div>
+          <DiagonalImageSplit
+            image1="/images/hockey-coaching-demo.jpg"
+            image2="/images/consulting-services.jpg"
+            alt1="Demostración de técnicas de hockey por entrenador GOAT"
+            alt2="Servicios de Consultoría GOAT Sports"
+            className="h-[400px] rounded-lg shadow-lg overflow-hidden"
+          />
         </div>
         <div className="lg:col-span-5 order-1 lg:order-2">
           <h2 className="text-3xl font-bold mb-6">Servicios de Consultoría</h2>

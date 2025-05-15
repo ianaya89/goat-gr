@@ -9,6 +9,7 @@ import CampusSection from "@/components/campus-section"
 import HeroSection from "@/components/hero-section"
 import ContactForm from "@/components/contact-form"
 import NewsletterForm from "@/components/newsletter-form"
+import SponsorsSection from "@/components/sponsors-section"
 import { getWhatsAppLink } from "@/utils/whatsapp-link"
 import { servicesData } from "@/data/services-data"
 
@@ -63,7 +64,7 @@ export default function Home() {
       </section>
 
       {/* Staff Section (Combined About and Team) */}
-      <section className="py-16 tablet:py-24 bg-gray-50" id="staff">
+      <section className="py-16 tablet:py-24 bg-gradient-to-b from-gray-50 to-white" id="staff">
         <div className="container mx-auto px-4">
           <StaffSection />
         </div>
@@ -85,11 +86,17 @@ export default function Home() {
       </section>
 
       {/* Campus Section */}
-      <section className="py-16 tablet:py-24 bg-gray-50" id="campus">
+      <section
+        className="py-16 tablet:py-24 relative overflow-hidden"
+        id="campus"
+        style={{
+          background: "linear-gradient(135deg, #00237c 0%, #1a56db 50%, #3b82f6 100%)",
+        }}
+      >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl tablet:text-4xl font-bold mb-4">Campus</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl tablet:text-4xl font-bold mb-4 text-white">Campus</h2>
+            <p className="text-white/90 max-w-2xl mx-auto">
               Experiencias inmersivas deportivas para jugadores de todos los niveles.
             </p>
           </div>
@@ -169,6 +176,9 @@ export default function Home() {
           <NewsletterForm />
         </div>
       </section>
+
+      {/* Sponsors Section */}
+      <SponsorsSection />
 
       <Footer />
     </div>

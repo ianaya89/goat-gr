@@ -27,10 +27,9 @@ export default function TrainingCenter() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
           <div className="p-6 tablet:p-10 text-white">
-            <h3 className="text-xl sm:text-2xl tablet:text-3xl font-bold mb-2">Instalaciones de Clase Mundial</h3>
+            <h3 className="text-xl sm:text-2xl tablet:text-3xl font-bold mb-2">Instalaciones de primer nivel</h3>
             <p className="text-base sm:text-lg tablet:text-xl max-w-2xl">
-              Nuestro centro de entrenamiento cuenta con la última tecnología y equipamiento para maximizar tu
-              desarrollo deportivo en un ambiente profesional.
+              Nuestro centro de entrenamiento cuenta con dos campos de cesped sintetico, gimnasio y todo lo necesario para el desarrollo deportivo en un ambiente profesional.
             </p>
           </div>
         </div>
@@ -38,7 +37,7 @@ export default function TrainingCenter() {
 
       {/* CTA */}
       <div className="text-center mb-8">
-        <h3 className="text-2xl font-bold mb-4">¿Quieres conocer nuestras instalaciones?</h3>
+        <h3 className="text-2xl font-bold mb-4">Querés conocer nuestras instalaciones?</h3>
         <p className="text-gray-600 max-w-2xl mx-auto mb-6">
           Te invitamos a visitar nuestro centro de entrenamiento y experimentar de primera mano todo lo que GOAT Sports
           tiene para ofrecer.
