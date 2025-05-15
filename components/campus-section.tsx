@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Calendar, MapPin, ImageIcon } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
+import ImageWithFallback from "./image-with-fallback"
 
 interface CampusEvent {
   id: string
@@ -62,14 +63,6 @@ const upcomingCampus = {
 
 export default function CampusSection() {
   const [activeTab, setActiveTab] = useState<"upcoming" | "past">("upcoming")
-  const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({})
-
-  const handleImageError = (id: string) => {
-    setImageErrors((prev) => ({
-      ...prev,
-      [id]: true,
-    }))
-  }
 
   return (
     <div className="container mx-auto px-4">
@@ -106,15 +99,11 @@ export default function CampusSection() {
         <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="h-64 lg:h-auto">
-              <img
-                src={
-                  imageErrors[upcomingCampus.id]
-                    ? "/placeholder.svg?height=400&width=800&query=hockey%20sports%20camp"
-                    : upcomingCampus.imageUrl
-                }
+              <ImageWithFallback
+                src={upcomingCampus.imageUrl || "/placeholder.svg"}
                 alt="Campus de Invierno 2024 - Grupo de participantes en campo de hockey"
+                fallbackSrc="/placeholder-kngc1.png"
                 className="w-full h-full object-cover"
-                onError={() => handleImageError(upcomingCampus.id)}
               />
             </div>
             <div className="p-6 md:p-8 flex flex-col">
@@ -148,15 +137,11 @@ export default function CampusSection() {
           {campusEvents.map((event, index) => (
             <Card key={event.id} className="overflow-hidden border border-gray-200">
               <div className="h-48 overflow-hidden">
-                <img
-                  src={
-                    imageErrors[event.id]
-                      ? `/placeholder.svg?height=300&width=400&query=past%20hockey%20camp%20${index}`
-                      : event.imageUrl
-                  }
+                <ImageWithFallback
+                  src={event.imageUrl || "/placeholder.svg"}
                   alt={`${event.title} - Imagen de participantes`}
+                  fallbackSrc={`/placeholder.svg?height=300&width=400&query=past%20hockey%20camp%20${index}`}
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                  onError={() => handleImageError(event.id)}
                 />
               </div>
               <CardContent className="p-6">

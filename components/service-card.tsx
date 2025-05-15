@@ -5,6 +5,7 @@ import { UserCog, GraduationCap, Tent, Users, Trophy } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import ServiceModal, { type ServiceDetails } from "./service-modal"
+import ImageWithFallback from "./image-with-fallback"
 import type { JSX } from "react"
 
 interface ServiceCardProps {
@@ -17,7 +18,6 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ title, description, icon, imageSrc, details }: ServiceCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const [imgError, setImgError] = useState(false)
 
   const getIcon = (): JSX.Element => {
     switch (icon) {
@@ -42,11 +42,11 @@ export default function ServiceCard({ title, description, icon, imageSrc, detail
     <>
       <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg h-full">
         <div className="h-48 overflow-hidden">
-          <img
-            src={imgError ? fallbackImage : imageSrc}
+          <ImageWithFallback
+            src={imageSrc || "/placeholder.svg"}
             alt={title}
+            fallbackSrc={fallbackImage}
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-            onError={() => setImgError(true)}
           />
         </div>
         <CardContent className="p-6 flex flex-col h-[calc(100%-12rem)]">

@@ -3,33 +3,28 @@
 import { Button } from "@/components/ui/button"
 import { MessageCircle } from "lucide-react"
 import { getWhatsAppLink } from "@/utils/whatsapp-link"
-import { useState } from "react"
+import ImageWithFallback from "./image-with-fallback"
 
 // Obtener el enlace de WhatsApp correctamente formateado
 const whatsappLink = getWhatsAppLink("Hola, me gustaría programar una visita a las instalaciones. Gracias!")
 
 export default function TrainingCenter() {
-  const [imgError, setImgError] = useState(false)
-
   return (
     <div className="container mx-auto px-4">
       {/* Main Facility Image */}
       <div className="relative rounded-xl overflow-hidden mb-12">
-        <img
-          src={
-            imgError
-              ? "/placeholder.svg?height=500&width=1000&query=modern%20hockey%20training%20center"
-              : "/images/training-center.jpg"
-          }
+        <ImageWithFallback
+          src="/images/training-center.jpg"
           alt="Centro de Entrenamiento GOAT Sports"
+          fallbackSrc="/placeholder-sejrx.png"
           className="w-full h-[300px] sm:h-[400px] tablet:h-[500px] object-cover"
-          onError={() => setImgError(true)}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
           <div className="p-6 tablet:p-10 text-white">
             <h3 className="text-xl sm:text-2xl tablet:text-3xl font-bold mb-2">Instalaciones de primer nivel</h3>
             <p className="text-base sm:text-lg tablet:text-xl max-w-2xl">
-              Nuestro centro de entrenamiento cuenta con dos campos de cesped sintetico, gimnasio y todo lo necesario para el desarrollo deportivo en un ambiente profesional.
+              Nuestro centro de entrenamiento cuenta con dos campos de cesped sintetico, gimnasio y todo lo necesario
+              para el desarrollo deportivo en un ambiente profesional.
             </p>
           </div>
         </div>

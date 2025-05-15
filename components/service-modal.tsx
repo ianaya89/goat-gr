@@ -4,7 +4,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Button } from "@/components/ui/button"
 import { MessageCircle } from "lucide-react"
 import { getWhatsAppLink } from "@/utils/whatsapp-link"
-import { useState } from "react"
+import ImageWithFallback from "./image-with-fallback"
 
 export interface ServiceDetails {
   title: string
@@ -25,20 +25,11 @@ interface ServiceModalProps {
 }
 
 export default function ServiceModal({ isOpen, onClose, service }: ServiceModalProps) {
-  const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({})
-
   if (!service) return null
 
   // Generar un enlace de WhatsApp con un mensaje personalizado para este servicio
   const whatsappMessage = `Hola, me gustaría obtener información sobre precios y disponibilidad del programa "${service.title}". Gracias!`
   const whatsappLink = getWhatsAppLink(whatsappMessage)
-
-  const handleImageError = (index: number) => {
-    setImageErrors((prev) => ({
-      ...prev,
-      [index]: true,
-    }))
-  }
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -52,15 +43,11 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
             {service.images.map((image, index) => (
               <div key={index} className="relative h-48 rounded-md overflow-hidden">
-                <img
-                  src={
-                    imageErrors[index]
-                      ? `/placeholder.svg?height=300&width=400&query=${encodeURIComponent(image.alt)}`
-                      : image.src
-                  }
+                <ImageWithFallback
+                  src={image.src || "/placeholder.svg"}
                   alt={image.alt}
+                  fallbackSrc={`/placeholder.svg?height=300&width=400&query=${encodeURIComponent(image.alt)}`}
                   className="w-full h-full object-cover"
-                  onError={() => handleImageError(index)}
                 />
               </div>
             ))}

@@ -1,6 +1,5 @@
 "use client"
-
-import { useState } from "react"
+import ImageWithFallback from "./image-with-fallback"
 
 interface SponsorLogo {
   name: string
@@ -12,7 +11,7 @@ interface SponsorLogo {
 const sponsorLogos: SponsorLogo[] = [
   {
     name: "Dole",
-    src: "/images/sponsors/dole-logo.svg", // Cambiado de png a svg
+    src: "/images/sponsors/dole-logo.svg",
     alt: "Dole - Patrocinador Oficial",
     width: 140,
   },
@@ -24,28 +23,13 @@ const sponsorLogos: SponsorLogo[] = [
   },
   {
     name: "Balling",
-    src: "/images/sponsors/balling-logo.png",
-    alt: "Balling - Patrocinador Oficial",
-    width: 140,
-  },
-  {
-    name: "Lecker",
     src: "/images/sponsors/balling-logo.webp",
-    alt: "Barritas Lecker - Patrocinador Oficial",
+    alt: "Balling - Patrocinador Oficial",
     width: 140,
   },
 ]
 
 export default function SponsorsSection() {
-  const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({})
-
-  const handleImageError = (name: string) => {
-    setImageErrors((prev) => ({
-      ...prev,
-      [name]: true,
-    }))
-  }
-
   return (
     <section className="py-12 bg-gray-900">
       <div className="container mx-auto px-4">
@@ -59,17 +43,13 @@ export default function SponsorsSection() {
         <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
           {sponsorLogos.map((logo) => (
             <div key={logo.name} className="flex items-center justify-center">
-              {imageErrors[logo.name] ? (
-                <div className="h-16 flex items-center justify-center text-white font-bold">{logo.name}</div>
-              ) : (
-                <img
-                  src={logo.src || "/placeholder.svg"}
-                  alt={logo.alt}
-                  className="h-12 md:h-16 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
-                  style={{ maxWidth: logo.width }}
-                  onError={() => handleImageError(logo.name)}
-                />
-              )}
+              <ImageWithFallback
+                src={logo.src || "/placeholder.svg"}
+                alt={logo.alt}
+                fallbackSrc={`/placeholder.svg?height=64&width=${logo.width}&query=${logo.name}%20logo`}
+                className="h-12 md:h-16 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
+                style={{ maxWidth: logo.width }}
+              />
             </div>
           ))}
         </div>

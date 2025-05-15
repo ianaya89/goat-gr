@@ -1,6 +1,5 @@
 "use client"
-
-import { useState } from "react"
+import ImageWithFallback from "./image-with-fallback"
 
 interface DiagonalImageSplitProps {
   image1: string
@@ -16,12 +15,9 @@ export default function DiagonalImageSplit({
   image2,
   alt1,
   alt2,
-  className = "h-[500px]", // Aumentado de 400px a 500px
-  height = "500px", // Aumentado de 400px a 500px
+  className = "h-[500px]",
+  height = "500px",
 }: DiagonalImageSplitProps) {
-  const [image1Error, setImage1Error] = useState(false)
-  const [image2Error, setImage2Error] = useState(false)
-
   const fallbackImage1 = `/placeholder.svg?height=${height}&width=600&query=${encodeURIComponent(alt1)}`
   const fallbackImage2 = `/placeholder.svg?height=${height}&width=600&query=${encodeURIComponent(alt2)}`
 
@@ -29,11 +25,11 @@ export default function DiagonalImageSplit({
     <div className={`relative overflow-hidden rounded-lg shadow-lg ${className}`}>
       {/* Primera imagen (parte superior izquierda) */}
       <div className="absolute inset-0">
-        <img
-          src={image1Error ? fallbackImage1 : image1}
+        <ImageWithFallback
+          src={image1 || "/placeholder.svg"}
           alt={alt1}
+          fallbackSrc={fallbackImage1}
           className="w-full h-full object-cover"
-          onError={() => setImage1Error(true)}
         />
       </div>
 
@@ -44,11 +40,11 @@ export default function DiagonalImageSplit({
           clipPath: "polygon(100% 0, 100% 100%, 0 100%)",
         }}
       >
-        <img
-          src={image2Error ? fallbackImage2 : image2}
+        <ImageWithFallback
+          src={image2 || "/placeholder.svg"}
           alt={alt2}
+          fallbackSrc={fallbackImage2}
           className="w-full h-full object-cover"
-          onError={() => setImage2Error(true)}
         />
       </div>
 
