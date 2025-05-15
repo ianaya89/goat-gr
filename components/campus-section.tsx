@@ -24,7 +24,7 @@ const campusEvents: CampusEvent[] = [
     location: "Buenos Aires, Argentina",
     description:
       "Nuestro campus de verano 2023 fue un éxito rotundo con más de 100 participantes de todas las edades. Los jugadores disfrutaron de entrenamientos intensivos, partidos amistosos y sesiones con entrenadores internacionales.",
-    imageUrl: "/placeholder.svg?key=campus1",
+    imageUrl: "/placeholder-ty4ho.png",
     isPast: true,
   },
   {
@@ -34,7 +34,7 @@ const campusEvents: CampusEvent[] = [
     location: "Mendoza, Argentina",
     description:
       "El campus de invierno 2023 se centró en técnicas avanzadas y estrategias de juego en equipo. Los participantes trabajaron en condiciones de alta intensidad para mejorar su rendimiento en situaciones de presión.",
-    imageUrl: "/placeholder.svg?key=campus2",
+    imageUrl: "/placeholder-5uvso.png",
     isPast: true,
   },
   {
@@ -44,7 +44,7 @@ const campusEvents: CampusEvent[] = [
     location: "Córdoba, Argentina",
     description:
       "El campus de verano 2024 ofreció una experiencia inmersiva con entrenadores de élite internacional. Los participantes mejoraron significativamente sus habilidades técnicas y tácticas.",
-    imageUrl: "/placeholder.svg?key=campus3",
+    imageUrl: "/placeholder.svg?height=300&width=400&query=hockey%20training%20camp",
     isPast: true,
   },
 ]
@@ -56,12 +56,20 @@ const upcomingCampus = {
   location: "Buenos Aires, Argentina",
   description:
     "¡No te pierdas nuestro próximo Campus de Invierno! Dos semanas intensivas de entrenamiento con los mejores coaches nacionales e internacionales. Perfecciona tu técnica, mejora tu condición física y desarrolla tu visión táctica en un ambiente profesional y divertido. Plazas limitadas, ¡reserva tu lugar ahora!",
-  imageUrl: "/placeholder.svg?key=upcoming-campus",
+  imageUrl: "/placeholder.svg?height=400&width=800&query=hockey%20sports%20camp",
   isPast: false,
 }
 
 export default function CampusSection() {
   const [activeTab, setActiveTab] = useState<"upcoming" | "past">("upcoming")
+  const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({})
+
+  const handleImageError = (id: string) => {
+    setImageErrors((prev) => ({
+      ...prev,
+      [id]: true,
+    }))
+  }
 
   return (
     <div className="container mx-auto px-4">
@@ -99,14 +107,14 @@ export default function CampusSection() {
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="h-64 lg:h-auto">
               <img
-                src="/placeholder.svg?height=400&width=800&query=hockey%20sports%20camp"
+                src={
+                  imageErrors[upcomingCampus.id]
+                    ? "/placeholder.svg?height=400&width=800&query=hockey%20sports%20camp"
+                    : upcomingCampus.imageUrl
+                }
                 alt={upcomingCampus.title}
                 className="w-full h-full object-cover"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement
-                  target.onerror = null
-                  target.src = "/placeholder.svg?height=400&width=800&query=hockey%20sports%20camp"
-                }}
+                onError={() => handleImageError(upcomingCampus.id)}
               />
             </div>
             <div className="p-6 md:p-8 flex flex-col">
@@ -141,14 +149,14 @@ export default function CampusSection() {
             <Card key={event.id} className="overflow-hidden">
               <div className="h-48 overflow-hidden">
                 <img
-                  src={event.imageUrl || `/placeholder.svg?height=300&width=400&query=past%20hockey%20camp%20${index}`}
+                  src={
+                    imageErrors[event.id]
+                      ? `/placeholder.svg?height=300&width=400&query=past%20hockey%20camp%20${index}`
+                      : event.imageUrl
+                  }
                   alt={event.title}
                   className="w-full h-full object-cover"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement
-                    target.onerror = null
-                    target.src = `/placeholder.svg?height=300&width=400&query=past%20hockey%20camp%20${index}`
-                  }}
+                  onError={() => handleImageError(event.id)}
                 />
               </div>
               <CardContent className="p-6">

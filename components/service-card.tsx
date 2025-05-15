@@ -17,6 +17,7 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ title, description, icon, imageSrc, details }: ServiceCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [imgError, setImgError] = useState(false)
 
   const getIcon = (): JSX.Element => {
     switch (icon) {
@@ -35,19 +36,17 @@ export default function ServiceCard({ title, description, icon, imageSrc, detail
     }
   }
 
+  const fallbackImage = `/placeholder.svg?height=300&width=400&query=${encodeURIComponent(title)}`
+
   return (
     <>
       <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg h-full">
         <div className="h-48 overflow-hidden">
           <img
-            src={imageSrc || `/placeholder.svg?height=300&width=400&query=${encodeURIComponent(title)}`}
+            src={imgError ? fallbackImage : imageSrc}
             alt={title}
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-            onError={(e) => {
-              const target = e.target as HTMLImageElement
-              target.onerror = null
-              target.src = `/placeholder.svg?height=300&width=400&query=${encodeURIComponent(title)}`
-            }}
+            onError={() => setImgError(true)}
           />
         </div>
         <CardContent className="p-6 flex flex-col h-[calc(100%-12rem)]">

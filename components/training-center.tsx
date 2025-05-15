@@ -1,24 +1,29 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { MessageCircle } from "lucide-react"
 import { getWhatsAppLink } from "@/utils/whatsapp-link"
+import { useState } from "react"
 
 // Obtener el enlace de WhatsApp correctamente formateado
 const whatsappLink = getWhatsAppLink("Hola, me gustaría programar una visita a las instalaciones. Gracias!")
 
 export default function TrainingCenter() {
+  const [imgError, setImgError] = useState(false)
+
   return (
     <div className="container mx-auto px-4">
       {/* Main Facility Image */}
       <div className="relative rounded-xl overflow-hidden mb-12">
         <img
-          src="/placeholder.svg?height=500&width=1000&query=modern%20hockey%20training%20center"
+          src={
+            imgError
+              ? "/placeholder.svg?height=500&width=1000&query=modern%20hockey%20training%20center"
+              : "/images/training-center.jpg"
+          }
           alt="Centro de Entrenamiento GOAT Sports"
           className="w-full h-[300px] sm:h-[400px] tablet:h-[500px] object-cover"
-          onError={(e) => {
-            const target = e.target as HTMLImageElement
-            target.onerror = null
-            target.src = "/placeholder.svg?height=500&width=1000&query=modern%20hockey%20training%20center"
-          }}
+          onError={() => setImgError(true)}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
           <div className="p-6 tablet:p-10 text-white">
