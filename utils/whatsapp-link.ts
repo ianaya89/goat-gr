@@ -11,9 +11,9 @@ export function getWhatsAppLink(message?: string): string {
   let url = `https://api.whatsapp.com/send/?phone=${phoneNumber}&type=phone_number&app_absent=0`
 
   // Añadir mensaje si se proporciona
-  if (message) {
-    url += `&text=${encodeURIComponent(message)}`
-  }
+  //if (message) {
+    //url += `&text=${encodeURIComponent(message)}`
+  //}
 
   return url
 }
