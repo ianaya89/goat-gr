@@ -70,8 +70,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Training Center Section */}
-      <section className="py-16 tablet:py-24 bg-white" id="training-center">
+      {/* Training Center Section - Ahora con fondo gris claro */}
+      <section className="py-16 tablet:py-24 bg-gray-100" id="training-center">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl tablet:text-4xl font-bold mb-4">Centro de Entrenamiento</h2>

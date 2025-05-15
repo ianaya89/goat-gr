@@ -12,7 +12,7 @@ interface SponsorLogo {
 const sponsorLogos: SponsorLogo[] = [
   {
     name: "Dole",
-    src: "/images/sponsors/dole-logo.png",
+    src: "/images/sponsors/dole-logo.svg", // Cambiado de png a svg
     alt: "Dole - Patrocinador Oficial",
     width: 140,
   },
@@ -24,8 +24,14 @@ const sponsorLogos: SponsorLogo[] = [
   },
   {
     name: "Balling",
-    src: "/images/sponsors/balling-logo.svg",
+    src: "/images/sponsors/balling-logo.png",
     alt: "Balling - Patrocinador Oficial",
+    width: 140,
+  },
+  {
+    name: "Lecker",
+    src: "/images/sponsors/balling-logo.webp",
+    alt: "Barritas Lecker - Patrocinador Oficial",
     width: 140,
   },
 ]

@@ -16,8 +16,8 @@ export default function DiagonalImageSplit({
   image2,
   alt1,
   alt2,
-  className = "h-[400px]",
-  height = "400px",
+  className = "h-[500px]", // Aumentado de 400px a 500px
+  height = "500px", // Aumentado de 400px a 500px
 }: DiagonalImageSplitProps) {
   const [image1Error, setImage1Error] = useState(false)
   const [image2Error, setImage2Error] = useState(false)

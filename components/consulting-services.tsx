@@ -16,11 +16,11 @@ export default function ConsultingServices() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         <div className="lg:col-span-7 order-2 lg:order-1 relative">
           <DiagonalImageSplit
-            image1="/images/hockey-coaching-demo.jpg"
-            image2="/images/consulting-services.jpg"
-            alt1="Demostración de técnicas de hockey por entrenador GOAT"
-            alt2="Servicios de Consultoría GOAT Sports"
-            className="h-[400px] rounded-lg shadow-lg overflow-hidden"
+            image1="/images/consulting-services.jpg" // Invertido el orden de las imágenes
+            image2="/images/hockey-coaching-demo.jpg" // Invertido el orden de las imágenes
+            alt1="Servicios de Consultoría GOAT Sports"
+            alt2="Demostración de técnicas de hockey por entrenador GOAT"
+            className="h-[500px] rounded-lg shadow-lg overflow-hidden" // Aumentado de 400px a 500px
           />
         </div>
         <div className="lg:col-span-5 order-1 lg:order-2">
