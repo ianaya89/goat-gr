@@ -27,6 +27,12 @@ const sponsorLogos: SponsorLogo[] = [
     alt: "Balling - Patrocinador Oficial",
     width: 140,
   },
+    {
+    name: "Lecker",
+    src: "/images/sponsors/balling-logo.svg",
+    alt: "Barritas Lecker - Patrocinador Oficial",
+    width: 140,
+  },
 ]
 
 export default function SponsorsSection() {
