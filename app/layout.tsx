@@ -4,6 +4,8 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import IntercomProvider from "@/components/intercom-provider"
+// Importar el componente FaviconComponent
+import FaviconComponent from "@/components/favicon-component"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -121,9 +123,10 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
-        {/* Forzar la actualización del favicon con un parámetro de versión y timestamp */}
-        <link rel="icon" href="/favicon.ico?v=3" />
-        <link rel="shortcut icon" href="/favicon.ico?v=3" />
+        {/* Favicon con versión forzada para evitar caché */}
+        <link rel="icon" href="/favicon.ico?v=4" />
+        <link rel="shortcut icon" href="/favicon.ico?v=4" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=4" />
 
         {/* Etiquetas adicionales para dispositivos Apple */}
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -138,6 +141,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+          <FaviconComponent />
           {children}
           <IntercomProvider />
 
