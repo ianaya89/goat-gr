@@ -28,15 +28,15 @@ export const servicesData: ServiceDetails[] = [
         alt: "Entrenamiento personal de hockey",
       },
       {
-        src: "/placeholder.svg?key=hvgf0",
+        src: "/placeholder-cjaaa.png",
         alt: "Entrenamiento personal de rugby",
       },
       {
-        src: "/placeholder.svg?key=0hvij",
+        src: "/soccer-training.png",
         alt: "Entrenamiento personal de fútbol",
       },
       {
-        src: "/placeholder.svg?key=lpj3v",
+        src: "/placeholder-zfrkl.png",
         alt: "Análisis de rendimiento deportivo",
       },
     ],
@@ -72,15 +72,15 @@ export const servicesData: ServiceDetails[] = [
         alt: "Entrenamiento de academia de hockey",
       },
       {
-        src: "/placeholder.svg?key=ir33c",
+        src: "/placeholder-5am23.png",
         alt: "Entrenamiento juvenil de rugby",
       },
       {
-        src: "/placeholder.svg?key=ch9w6",
+        src: "/placeholder-6u7hx.png",
         alt: "Práctica de equipo de hockey",
       },
       {
-        src: "/placeholder.svg?key=3irnl",
+        src: "/placeholder-x7ldx.png",
         alt: "Taller de habilidades de rugby",
       },
     ],
@@ -112,19 +112,19 @@ export const servicesData: ServiceDetails[] = [
     ],
     images: [
       {
-        src: "/images/team-rental.jpg",
+        src: "/placeholder.svg?height=400&width=600&query=hockey%20team%20training",
         alt: "Equipo de hockey entrenando",
       },
       {
-        src: "/rugby-team-training.png",
+        src: "/placeholder.svg?height=400&width=600&query=rugby%20team%20training",
         alt: "Sesión de entrenamiento de equipo de rugby",
       },
       {
-        src: "/placeholder.svg?key=vqjfb",
+        src: "/placeholder.svg?height=400&width=600&query=sports%20video%20analysis",
         alt: "Análisis de video para equipos deportivos",
       },
       {
-        src: "/placeholder.svg?key=7zmrb",
+        src: "/placeholder.svg?height=400&width=600&query=sports%20facility%20locker%20rooms",
         alt: "Vestuarios de instalaciones deportivas",
       },
     ],

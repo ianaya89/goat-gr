@@ -41,21 +41,21 @@ export default function Home() {
               title={servicesData[0].title}
               description={servicesData[0].description}
               icon="UserCog"
-              imageSrc="/images/personal-training.jpg"
+              imageSrc="/placeholder.svg?height=300&width=400&query=personal%20hockey%20training"
               details={servicesData[0]}
             />
             <ServiceCard
               title={servicesData[1].title}
               description={servicesData[1].description}
               icon="GraduationCap"
-              imageSrc="/images/hockey-academy.jpg"
+              imageSrc="/placeholder.svg?height=300&width=400&query=hockey%20academy%20training"
               details={servicesData[1]}
             />
             <ServiceCard
               title={servicesData[2].title}
               description={servicesData[2].description}
               icon="Users"
-              imageSrc="/images/team-rental.jpg"
+              imageSrc="/placeholder.svg?height=300&width=400&query=team%20hockey%20training"
               details={servicesData[2]}
             />
           </div>

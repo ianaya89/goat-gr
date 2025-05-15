@@ -99,9 +99,14 @@ export default function CampusSection() {
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="h-64 lg:h-auto">
               <img
-                src={upcomingCampus.imageUrl || "/placeholder.svg"}
+                src="/placeholder.svg?height=400&width=800&query=hockey%20sports%20camp"
                 alt={upcomingCampus.title}
                 className="w-full h-full object-cover"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement
+                  target.onerror = null
+                  target.src = "/placeholder.svg?height=400&width=800&query=hockey%20sports%20camp"
+                }}
               />
             </div>
             <div className="p-6 md:p-8 flex flex-col">
@@ -132,13 +137,18 @@ export default function CampusSection() {
       {/* Past Campus - Cambiado a 1 columna para tablet y menos */}
       {activeTab === "past" && (
         <div className="grid grid-cols-1 tablet:grid-cols-3 gap-8">
-          {campusEvents.map((event) => (
+          {campusEvents.map((event, index) => (
             <Card key={event.id} className="overflow-hidden">
               <div className="h-48 overflow-hidden">
                 <img
-                  src={event.imageUrl || "/placeholder.svg"}
+                  src={event.imageUrl || `/placeholder.svg?height=300&width=400&query=past%20hockey%20camp%20${index}`}
                   alt={event.title}
                   className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement
+                    target.onerror = null
+                    target.src = `/placeholder.svg?height=300&width=400&query=past%20hockey%20camp%20${index}`
+                  }}
                 />
               </div>
               <CardContent className="p-6">

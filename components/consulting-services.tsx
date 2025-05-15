@@ -14,10 +14,15 @@ export default function ConsultingServices() {
         <div className="lg:col-span-7 order-2 lg:order-1 relative">
           <div className="rounded-lg shadow-lg overflow-hidden h-[400px]">
             <img
-              src="/images/consulting-services.jpg"
+              src="/placeholder.svg?height=400&width=600&query=sports%20consulting%20services"
               alt="Servicios de Consultoría GOAT Sports"
               className="w-full h-full object-cover"
               style={{ objectPosition: "center center" }}
+              onError={(e) => {
+                const target = e.target as HTMLImageElement
+                target.onerror = null
+                target.src = "/placeholder.svg?height=400&width=600&query=sports%20consulting%20services"
+              }}
             />
           </div>
         </div>

@@ -40,9 +40,14 @@ export default function ServiceCard({ title, description, icon, imageSrc, detail
       <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg h-full">
         <div className="h-48 overflow-hidden">
           <img
-            src={imageSrc || "/placeholder.svg"}
+            src={imageSrc || `/placeholder.svg?height=300&width=400&query=${encodeURIComponent(title)}`}
             alt={title}
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement
+              target.onerror = null
+              target.src = `/placeholder.svg?height=300&width=400&query=${encodeURIComponent(title)}`
+            }}
           />
         </div>
         <CardContent className="p-6 flex flex-col h-[calc(100%-12rem)]">

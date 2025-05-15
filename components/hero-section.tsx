@@ -89,11 +89,10 @@ export default function HeroSection() {
                 ${isChanging ? "opacity-0 transform translate-y-8" : "opacity-100 transform translate-y-0"}
               `}
               style={{
-                background: "linear-gradient(to right, #FFD700, #FFA500, #FF8C00)",
+                background: "linear-gradient(to right, #8A2BE2, #6A5ACD, #483D8B)",
                 WebkitBackgroundClip: "text",
                 backgroundClip: "text",
                 color: "transparent",
-                textShadow: "0 0 15px rgba(255, 215, 0, 0.5)",
                 fontWeight: "800",
                 animation: "gradient 3s linear infinite",
                 backgroundSize: "200% auto",

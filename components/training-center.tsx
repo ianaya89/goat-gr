@@ -11,9 +11,14 @@ export default function TrainingCenter() {
       {/* Main Facility Image */}
       <div className="relative rounded-xl overflow-hidden mb-12">
         <img
-          src="/images/training-center.jpg"
+          src="/placeholder.svg?height=500&width=1000&query=modern%20hockey%20training%20center"
           alt="Centro de Entrenamiento GOAT Sports"
           className="w-full h-[300px] sm:h-[400px] tablet:h-[500px] object-cover"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement
+            target.onerror = null
+            target.src = "/placeholder.svg?height=500&width=1000&query=modern%20hockey%20training%20center"
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
           <div className="p-6 tablet:p-10 text-white">
