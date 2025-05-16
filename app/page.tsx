@@ -90,8 +90,9 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl tablet:text-4xl font-bold mb-4">Campus</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Experiencias inmersivas deportivas para jugadores de todos los niveles.
+            <p className="text-gray-600 max-w-6xl mx-auto">
+            Nuestros Campus de Hockey GOAT Sports son experiencias inmersivas pensadas para jugadores de todos los niveles: desde quienes se inician hasta atletas de alto rendimiento. Durante varios días combinarás entrenamientos técnicos, trabajo táctico, preparación física específica y dinámicas de fortalecimiento mental, mientras creamos un ambiente divertido a inculamos la pasión por el deporte.
+            Vení a perfeccionar tu juego, conocer nuevas amistades y vivir el deporte con la energía y el respaldo de GOAT Sports.
             </p>
           </div>
 

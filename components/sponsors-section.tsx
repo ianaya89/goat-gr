@@ -42,7 +42,7 @@ export default function SponsorsSection() {
         <div className="text-center mb-8">
           <h2 className="text-2xl font-bold text-white mb-2">Nuestros Patrocinadores</h2>
           <p className="text-white/80 max-w-2xl mx-auto text-sm">
-            Agradecemos a las marcas que confían en nosotros y hacen posible nuestro trabajo
+            Agradecemos a las marcas que confían en nosotros y hacen que nuestro trabajo sea más facil
           </p>
         </div>
 
