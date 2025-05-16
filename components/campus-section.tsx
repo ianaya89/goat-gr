@@ -51,12 +51,12 @@ const campusEvents: CampusEvent[] = [
 ]
 
 const upcomingCampus = {
-  id: "winter-2024",
-  title: "Campus de Invierno 2024",
-  date: "15-30 Julio, 2024",
+  id: "winter-2025",
+  title: "Campus de Invierno 2025",
+  date: "21-27 Julio, 2025",
   location: "Buenos Aires, Argentina",
   description:
-    "¡No te pierdas nuestro próximo Campus de Invierno! Dos semanas intensivas de entrenamiento con los mejores coaches nacionales e internacionales. Perfecciona tu técnica, mejora tu condición física y desarrolla tu visión táctica en un ambiente profesional y divertido. Plazas limitadas, ¡reserva tu lugar ahora!",
+    "¡No te pierdas nuestro próximo Campus de Invierno! 5 dias de entrenamiento intensivos con los mejores coaches. Perfecciona tu técnica, mejora tu condición física y desarrolla tu visión táctica en un ambiente profesional y divertido. Cupos limitadas, ¡reserva tu lugar ahora!",
   imageUrl: "/images/campus-group-photo.jpg",
   isPast: false,
 }
