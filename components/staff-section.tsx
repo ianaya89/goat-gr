@@ -52,7 +52,7 @@ export default function StaffSection() {
       <div className="text-center mb-16">
         <h2 className="text-3xl tablet:text-4xl font-bold mb-4">Nosotros</h2>
         <p className="text-gray-600 max-w-6xl mx-auto">
-          Somos cuatro socios, amigos y compañero de equipo, motivados por la pasión de acompañar a deportistas en el
+          Somos socios, amigos y compañeros de equipo, motivados por la pasión de acompañar a deportistas en el
           camino hacia sus sueños. Nos propusimos crear un lugar donde poder darte las herramientas, respaldo y
           acompañamiento que necesitas, para que alcances cualquier meta que propongas.
           <br />
