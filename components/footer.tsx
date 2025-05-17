@@ -37,7 +37,7 @@ export default function Footer() {
               <img src="/images/horizontal-logo-white.png" alt="GOAT Sports Logo" className="h-12 w-auto" />
             </div>
             <p className="text-gray-400 mb-4">
-              Somos GOAT Sports, mucho más que un centro de entrenamiento.
+              Ahora somos GOAT Sports, mucho más que un training center.
             </p>
             <div className="flex space-x-4">
               <a href="https://www.facebook.com/profile.php?id=61575793396752" className="text-gray-400 hover:text-white">

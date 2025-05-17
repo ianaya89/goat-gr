@@ -24,7 +24,7 @@ export const servicesData: ServiceDetails[] = [
     ],
     images: [
       {
-        src: "/images/personal-training.jpg",
+        src: "/images/personalizado-hockey-4.jpeg",
         alt: "Entrenamiento personal de hockey",
       },
       {
