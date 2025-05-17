@@ -71,7 +71,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="#staff" className="text-gray-400 hover:text-white">
-                  Nosotros
+                  Staff
                 </Link>
               </li>
               <li>

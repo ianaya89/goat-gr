@@ -62,7 +62,7 @@ export default function Navbar() {
               className="text-gray-600 hover:text-blue-600 font-medium"
               onClick={(e) => handleSmoothScroll(e, "staff")}
             >
-              Nosotros
+              Staff
             </a>
             <a
               href="#training-center"
@@ -138,7 +138,7 @@ export default function Navbar() {
               className="block text-gray-600 hover:text-blue-600 font-medium py-2"
               onClick={(e) => handleSmoothScroll(e, "staff")}
             >
-              Nosotros
+              Staff
             </a>
             <a
               href="#training-center"

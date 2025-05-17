@@ -36,6 +36,8 @@ export default function ServiceCard({ title, description, icon, imageSrc, detail
     }
   }
 
+  // Usar la primera imagen del array de imágenes si está disponible, de lo contrario usar imageSrc
+  const displayImage = details.images && details.images.length > 0 ? details.images[0].src : imageSrc
   const fallbackImage = `/placeholder.svg?height=300&width=400&query=${encodeURIComponent(title)}`
 
   return (
@@ -43,7 +45,7 @@ export default function ServiceCard({ title, description, icon, imageSrc, detail
       <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg h-full">
         <div className="h-48 overflow-hidden">
           <ImageWithFallback
-            src={imageSrc || "/placeholder.svg"}
+            src={displayImage || "/placeholder.svg"}
             alt={title}
             fallbackSrc={fallbackImage}
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
