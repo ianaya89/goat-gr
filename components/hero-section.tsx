@@ -79,7 +79,7 @@ export default function HeroSection() {
           <span className="block mb-4">Veni a GOAT para</span>
 
           {/* Contenedor para el texto animado */}
-          <div className="relative h-[1.5em] flex items-center justify-center mb-6 mt-4 sm:mt-2 mb-8 sm:mb-6 overflow-hidden">
+          <div className="relative flex items-center justify-center mt-4 mb-8 overflow-hidden">
             {/* Texto con gradiente */}
             <span
               className={`
