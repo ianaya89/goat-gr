@@ -16,7 +16,7 @@ export default function ConsultingServices() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         <div className="lg:col-span-7 order-2 lg:order-1 relative">
           <DiagonalImageSplit
-            image1="/images/consulting-services.jpg" // Invertido el orden de las imágenes
+            image1="/images/consulting.jpeg" // Invertido el orden de las imágenes
             image2="/images/hockey-coaching-demo.jpg" // Invertido el orden de las imágenes
             alt1="Servicios de Consultoría GOAT Sports"
             alt2="Demostración de técnicas de hockey por entrenador GOAT"

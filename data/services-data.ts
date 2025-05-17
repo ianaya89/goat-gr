@@ -28,15 +28,15 @@ export const servicesData: ServiceDetails[] = [
         alt: "Entrenamiento personal de hockey",
       },
       {
-        src: "/placeholder-cjaaa.png",
-        alt: "Entrenamiento personal de rugby",
+        src: "/images/personalizado-hockey.jpeg",
+        alt: "Entrenamiento personal de hockey",
       },
       {
-        src: "/placeholder-zfrkl.png",
+        src: "/images/personalizado-hockey-2.jpeg",
         alt: "Análisis de rendimiento deportivo",
       },
       {
-        src: "/placeholder-5am23.png",
+        src: "/images/personalizado-hockey-3.jpeg",
         alt: "Entrenamiento juvenil de rugby",
       },
     ],
@@ -64,15 +64,15 @@ export const servicesData: ServiceDetails[] = [
         alt: "Entrenamiento de academia de hockey",
       },
       {
-        src: "/placeholder-5am23.png",
+        src: "/images/hockey-academy-2.jpeg",
         alt: "Entrenamiento juvenil de rugby",
       },
       {
-        src: "/placeholder-6u7hx.png",
+        src: "/images/hockey-academy-3.jpeg",
         alt: "Práctica de equipo de hockey",
       },
       {
-        src: "/placeholder-x7ldx.png",
+        src: "/images/rugby-training-indoor.jpeg",
         alt: "Taller de habilidades de rugby",
       },
     ],
@@ -98,11 +98,11 @@ export const servicesData: ServiceDetails[] = [
     ],
     images: [
       {
-        src: "/placeholder-arx5u.png",
+        src: "/images/team-training-group.jpeg",
         alt: "Equipo de hockey entrenando",
       },
       {
-        src: "/placeholder-lom5l.png",
+        src: "/images/team-recovery-session.jpeg",
         alt: "Sesión de entrenamiento de equipo de rugby",
       },
       {

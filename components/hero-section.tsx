@@ -104,7 +104,7 @@ export default function HeroSection() {
         </h1>
 
         <p className="text-xl text-white/90 max-w-2xl mb-8">
-          No importa cual sea tu objetivo, nosotros tenemos un plan para llevarlo a cabo. Programas grupales y
+          No importa cual sea tu objetivo, nosotros te ayudamos a cumplirlo. Programas grupales y
           personalizados, diseñados para llevarte al siguiente nivel, sea cual sea tu punto de partida.
         </p>
 
