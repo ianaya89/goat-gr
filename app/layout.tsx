@@ -99,6 +99,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
+
         {/* Favicon simplificado */}
         <link rel="icon" href="/favicon.ico" />
         <link rel="shortcut icon" href="/favicon.ico" />
