@@ -92,7 +92,7 @@ export default function ConsultingServices() {
             </div>
           </div>
 
-          <div className="mt-8 flex justify-center">
+          <div className="mt-8 flex justify-center lg:justify-start">
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
               <Button className="bg-white text-blue-600 hover:bg-white/90 flex items-center gap-2">
                 <MessageCircle className="h-5 w-5" />

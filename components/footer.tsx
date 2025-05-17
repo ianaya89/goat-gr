@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin, MessageCircle, ExternalLink } from "lucide-react"
+import { Facebook, Instagram, Mail, Phone, MapPin, MessageCircle, ExternalLink } from "lucide-react"
 import { getWhatsAppLink } from "@/utils/whatsapp-link"
 
 // Obtener el enlace de WhatsApp correctamente formateado
@@ -37,17 +37,18 @@ export default function Footer() {
               <img src="/images/horizontal-logo-white.png" alt="GOAT Sports Logo" className="h-12 w-auto" />
             </div>
             <p className="text-gray-400 mb-4">
-              Somos GOAT Sports, mucho más que un centro de entrenamiento.
+              Elevando a los jugadores de hockey sobre césped a su máximo potencial a través de entrenamiento experto y
+              programas integrales.
             </p>
             <div className="flex space-x-4">
-              <a href="https://www.facebook.com/profile.php?id=61575793396752" className="text-gray-400 hover:text-white">
+              <a href="#" className="text-gray-400 hover:text-white">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="https://www.instagram.com/goatsports.ar/" className="text-gray-400 hover:text-white">
+              <a href="#" className="text-gray-400 hover:text-white">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="https://www.linkedin.com/company/goatsportsar" className="text-gray-400 hover:text-white">
-                <Linkedin className="h-5 w-5" />
+              <a href="#" className="text-gray-400 hover:text-white">
+                <TikTok className="h-5 w-5" />
               </a>
               <a
                 href={whatsappLink}
@@ -111,7 +112,7 @@ export default function Footer() {
               <li className="flex">
                 <Phone className="h-5 w-5 text-gray-400 mr-2 flex-shrink-0" />
                 <a href={`tel:+5491126578585`} className="text-gray-400 hover:text-white">
-                  +54 9 11 2567 8585
+                  +54 9 11 2657 8585
                 </a>
               </li>
               <li className="flex">
@@ -134,7 +135,7 @@ export default function Footer() {
             {/* Trabaja con nosotros - Badge (Movido aquí) */}
             <div className="mt-6">
               <a
-                href="https://www.linkedin.com/jobs/goat-sports-jobs-worldwide"
+                href="mailto:jobs@goatsports.ar"
                 className="inline-flex items-center bg-blue-600/20 text-blue-400 hover:bg-blue-600/30 transition-colors px-4 py-2 rounded-full font-medium"
               >
                 Unite a nuestro equipo

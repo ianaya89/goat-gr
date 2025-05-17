@@ -107,13 +107,13 @@ export default function CampusRegistration() {
               <div className="h-64 relative">
                 <img
                   src="/placeholder.svg?key=upcoming-campus"
-                  alt="Campus de Invierno 2025"
+                  alt="Campus de Invierno 2024"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
                   <div className="p-6 text-white">
-                    <h1 className="text-3xl font-bold">Inscripción: Campus de Invierno 2025</h1>
-                    <p className="text-lg">21-27 Julio, 2025 • Buenos Aires, Argentina</p>
+                    <h1 className="text-3xl font-bold">Inscripción: Campus de Invierno 2024</h1>
+                    <p className="text-lg">15-30 Julio, 2024 • Buenos Aires, Argentina</p>
                   </div>
                 </div>
               </div>

@@ -32,7 +32,7 @@ export default function TrainingCenter() {
 
       {/* CTA */}
       <div className="text-center mb-8">
-        <h3 className="text-2xl font-bold mb-4">¿Querés conocer nuestras instalaciones?</h3>
+        <h3 className="text-2xl font-bold mb-4">Querés conocer nuestras instalaciones?</h3>
         <p className="text-gray-600 max-w-2xl mx-auto mb-6">
           Te invitamos a visitar nuestro centro de entrenamiento y experimentar de primera mano todo lo que GOAT Sports
           tiene para ofrecer.
