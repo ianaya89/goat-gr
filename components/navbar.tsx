@@ -69,7 +69,7 @@ export default function Navbar() {
               className="text-gray-600 hover:text-blue-600 font-medium"
               onClick={(e) => handleSmoothScroll(e, "training-center")}
             >
-              Centro de Entrenamiento
+              Training Center
             </a>
             <a
               href="#campus"
@@ -145,7 +145,7 @@ export default function Navbar() {
               className="block text-gray-600 hover:text-blue-600 font-medium py-2"
               onClick={(e) => handleSmoothScroll(e, "training-center")}
             >
-              Centro de Entrenamiento
+              Training Center
             </a>
             <a
               href="#campus"

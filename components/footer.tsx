@@ -75,7 +75,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="#training-center" className="text-gray-400 hover:text-white">
-                  Centro de Entrenamiento
+                  Training Center
                 </Link>
               </li>
               <li>

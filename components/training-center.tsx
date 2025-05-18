@@ -15,7 +15,7 @@ export default function TrainingCenter() {
       <div className="relative rounded-xl overflow-hidden mb-12">
         <ImageWithFallback
           src="/images/training-center.jpg"
-          alt="Centro de Entrenamiento GOAT Sports"
+          alt="Training Center GOAT Sports"
           fallbackSrc="/placeholder-sejrx.png"
           className="w-full h-[300px] sm:h-[400px] tablet:h-[500px] object-cover"
         />
@@ -23,7 +23,7 @@ export default function TrainingCenter() {
           <div className="p-6 tablet:p-10 text-white">
             <h3 className="text-xl sm:text-2xl tablet:text-3xl font-bold mb-2">Instalaciones de primer nivel</h3>
             <p className="text-base sm:text-lg tablet:text-xl max-w-2xl">
-              Nuestro centro de entrenamiento cuenta con dos campos de cesped sintetico, gimnasio y todo lo necesario
+              Nuestro centro de entrenamiento ubicado en Vicente López, cuenta con dos campos de cesped sintetico, gimnasio y todo lo necesario
               para el desarrollo deportivo en un ambiente profesional.
             </p>
           </div>
