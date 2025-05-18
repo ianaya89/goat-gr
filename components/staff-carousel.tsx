@@ -114,6 +114,20 @@ const staffMembers: StaffMember[] = [
     bio: "bio",
     imageQuery: "sports psychologist female",
   },
+  {
+    id: 15,
+    name: "Tomas Achetta",
+    position: "Preparador Físico",
+    bio: "bio",
+    imageQuery: "sports psychologist female",
+  },
+  {
+    id: 16,
+    name: "Iriel",
+    position: "Kinesiologa",
+    bio: "bio",
+    imageQuery: "sports psychologist female",
+  },
 ]
 
 export default function StaffCarousel() {
