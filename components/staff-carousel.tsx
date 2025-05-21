@@ -13,6 +13,7 @@ interface StaffMember {
   position: string
   bio: string
   imageQuery: string
+  imageUrl: string
 }
 
 const staffMembers: StaffMember[] = [
@@ -22,6 +23,7 @@ const staffMembers: StaffMember[] = [
     position: "Co-Fundador",
     bio: "bio",
     imageQuery: "professional female field hockey coach",
+    imageUrl: "nacho.jpg",
   },
   {
     id: 2,
@@ -29,6 +31,7 @@ const staffMembers: StaffMember[] = [
     position: "Co-Fundador",
     bio: "bio",
     imageQuery: "male field hockey coach with clipboard",
+    imageUrl: "ito.jpg",
   },
   {
     id: 3,
@@ -36,6 +39,7 @@ const staffMembers: StaffMember[] = [
     position: "Co-Fundador",
     bio: "bio",
     imageQuery: "young female field hockey coach with children",
+    imageUrl: "basu.jpg",
   },
   {
     id: 4,
@@ -43,91 +47,92 @@ const staffMembers: StaffMember[] = [
     position: "Co-Fundador",
     bio: "bio",
     imageQuery: "sports performance analyst with laptop",
+    imageUrl: "thomas.jpg",
   },
-  {
-    id: 5,
-    name: "Sasha London",
-    position: "Entrenadora de Hockey",
-    bio: "bio",
-    imageQuery: "female field hockey goalkeeper coach",
-  },
-  {
-    id: 6,
-    name: "Ignacio Pacheco",
-    position: "Entrenador de Hockey",
-    bio: "bio",
-    imageQuery: "professional rugby coach",
-  },
-  {
-    id: 7,
-    name: "Andrea Panzarini",
-    position: "Entrenador de Rugby",
-    bio: "bio",
-    imageQuery: "female sports physical trainer",
-  },
-  {
-    id: 8,
-    name: "Gustavo Umansky",
-    position: "Entrenador de Fútbol",
-    bio: "bio",
-    imageQuery: "professional soccer coach",
-  },
-  {
-    id: 9,
-    name: "Ignacio Nardolillo",
-    position: "Entrenador de Hockey",
-    bio: "bio",
-    imageQuery: "sports nutritionist female",
-  },
-  {
-    id: 10,
-    name: "Facundo Zárate",
-    position: "Entrenador de Hockey",
-    bio: "bio",
-    imageQuery: "sports physiotherapist male",
-  },
-  {
-    id: 11,
-    name: "Valentina Bartoli",
-    position: "Entrenadora de Hockey",
-    bio: "bio",
-    imageQuery: "sports psychologist female",
-  },
-  {
-    id: 12,
-    name: "Pilar Palacios",
-    position: "Entrenadora de Hockey",
-    bio: "bio",
-    imageQuery: "sports psychologist female",
-  },
-  {
-    id: 13,
-    name: "Yazmin Pallotini",
-    position: "Entrenadora de Arqueros",
-    bio: "bio",
-    imageQuery: "sports psychologist female",
-  },
-  {
-    id: 14,
-    name: "Jeróimo Arislur",
-    position: "Entrenador de Hockey",
-    bio: "bio",
-    imageQuery: "sports psychologist female",
-  },
-  {
-    id: 15,
-    name: "Tomas Achetta",
-    position: "Preparador Físico",
-    bio: "bio",
-    imageQuery: "sports psychologist female",
-  },
-  {
-    id: 16,
-    name: "Iriel",
-    position: "Kinesiologa",
-    bio: "bio",
-    imageQuery: "sports psychologist female",
-  },
+  // {
+  //   id: 5,
+  //   name: "Sasha London",
+  //   position: "Entrenadora de Hockey",
+  //   bio: "bio",
+  //   imageQuery: "female field hockey goalkeeper coach",
+  // },
+  // {
+  //   id: 6,
+  //   name: "Ignacio Pacheco",
+  //   position: "Entrenador de Hockey",
+  //   bio: "bio",
+  //   imageQuery: "professional rugby coach",
+  // },
+  // {
+  //   id: 7,
+  //   name: "Andrea Panzarini",
+  //   position: "Entrenador de Rugby",
+  //   bio: "bio",
+  //   imageQuery: "female sports physical trainer",
+  // },
+  // {
+  //   id: 8,
+  //   name: "Gustavo Umansky",
+  //   position: "Entrenador de Fútbol",
+  //   bio: "bio",
+  //   imageQuery: "professional soccer coach",
+  // },
+  // {
+  //   id: 9,
+  //   name: "Ignacio Nardolillo",
+  //   position: "Entrenador de Hockey",
+  //   bio: "bio",
+  //   imageQuery: "sports nutritionist female",
+  // },
+  // {
+  //   id: 10,
+  //   name: "Facundo Zárate",
+  //   position: "Entrenador de Hockey",
+  //   bio: "bio",
+  //   imageQuery: "sports physiotherapist male",
+  // },
+  // {
+  //   id: 11,
+  //   name: "Valentina Bartoli",
+  //   position: "Entrenadora de Hockey",
+  //   bio: "bio",
+  //   imageQuery: "sports psychologist female",
+  // },
+  // {
+  //   id: 12,
+  //   name: "Pilar Palacios",
+  //   position: "Entrenadora de Hockey",
+  //   bio: "bio",
+  //   imageQuery: "sports psychologist female",
+  // },
+  // {
+  //   id: 13,
+  //   name: "Yazmin Pallotini",
+  //   position: "Entrenadora de Arqueros",
+  //   bio: "bio",
+  //   imageQuery: "sports psychologist female",
+  // },
+  // {
+  //   id: 14,
+  //   name: "Jeróimo Arislur",
+  //   position: "Entrenador de Hockey",
+  //   bio: "bio",
+  //   imageQuery: "sports psychologist female",
+  // },
+  // {
+  //   id: 15,
+  //   name: "Tomas Achetta",
+  //   position: "Preparador Físico",
+  //   bio: "bio",
+  //   imageQuery: "sports psychologist female",
+  // },
+  // {
+  //   id: 16,
+  //   name: "Iriel",
+  //   position: "Kinesiologa",
+  //   bio: "bio",
+  //   imageQuery: "sports psychologist female",
+  // },
 ]
 
 export default function StaffCarousel() {
@@ -208,7 +213,7 @@ export default function StaffCarousel() {
                       <CardContent className="p-0 flex flex-col h-full">
                         <div className="w-full h-48">
                           <img
-                            src={`/abstract-geometric-shapes.png?height=200&width=300&query=${member.imageQuery}`}
+                            src={`images/${member.imageUrl}?height=200&width=300&query=${member.imageQuery}`}
                             alt={member.name}
                             className="w-full h-full object-cover"
                           />
@@ -216,7 +221,7 @@ export default function StaffCarousel() {
                         <div className="p-4 flex flex-col flex-grow">
                           <h3 className="text-lg font-bold text-gray-900">{member.name}</h3>
                           <p className="text-blue-600 font-medium mb-2">{member.position}</p>
-                          <p className="text-gray-600 text-sm">{member.bio}</p>
+                          {/* <p className="text-gray-600 text-sm">{member.bio}</p> */}
                         </div>
                       </CardContent>
                     </Card>

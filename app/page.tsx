@@ -134,24 +134,30 @@ export default function Home() {
           </div>
 
           {/* Cambiado a 1 columna para tablet y menos */}
-          <div className="grid grid-cols-1 tablet:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 tablet:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <TestimonialCard
+              quote="Entrenar en goat me hizo crecer muchísimo en cuanto a técnica y a mantener una disciplina día a día. Mejorando y potenciando mi nivel deportivo! 🦁"
+              name="Catalina Alimenti"
+              title="Jugadora de las Leonas"
+              // imageQuery="female field hockey player portrait"
+            />
             <TestimonialCard
-              quote="Entrenar en Goat, no solo potenció y llevó a otro nivel mis habilades técnicas y físicas, sino que además, es un lugar con una energía y clima increíbles que te empujan a ir por más y donde de verdad aprendes de los mejores"
+              quote="Entrenar en Goat, no solo potenció y llevó a otro nivel mis habilades técnicas y físicas, sino que además, es un lugar con una energía y clima increíbles que te empujan a ir por más y donde de verdad aprendes de los mejores 💪"
               name="Angie Belosio"
               title="Jugadora de Banco Nacion"
-              imageQuery="female field hockey player portrait"
+              // imageQuery="female field hockey player portrait"
             />
             <TestimonialCard
-              quote="Disfruto mucho los campus de GOAT! Porque me permite mejorar mis habilidades y aprender nuevos gestos técnicos. Los profes son Increíbles!!! siempre están pendientes de nosotros cuidándonos en todo momento"
+              quote="Disfruto mucho los campus de GOAT! Porque me permite mejorar mis habilidades y aprender nuevos gestos técnicos. Los profes son Increíbles!!! siempre están pendientes de nosotros cuidándonos en todo momento 🫶"
               name="Martina Giannini"
               title="Jugadora de GEBA"
-              imageQuery="young female field hockey player portrait"
+              // imageQuery="young female field hockey player portrait"
             />
              <TestimonialCard
-              quote="Hace 3 años que entreno en GOAT y me encanta porque los profes me ayudan mucho a mejorar mi técnica. Es un espacio donde me siento cómoda y en el que realmente noto mi crecimiento como jugadora. Estoy muy agradecida por el apoyo y la dedicación de todo el staff, sé que cuento con ellos siempre! 🏑🩷"
+              quote="Hace 3 años que entreno y me encanta porque los profes me ayudan mucho. Es un espacio donde me siento cómoda y en el que realmente noto mi crecimiento como jugadora. Estoy muy agradecida por el apoyo y la dedicación de todos, sé que cuento con ellos siempre! 🩷"
               name="Sofia Villarreal"
               title="Jugadora de GEBA"
-              imageQuery="young female field hockey player portrait"
+              // imageQuery="young female field hockey player portrait"
             />
           </div>
         </div>

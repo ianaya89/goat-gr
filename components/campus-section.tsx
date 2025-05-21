@@ -69,7 +69,7 @@ export default function CampusSection() {
       {/* Tabs */}
       <div className="flex justify-center mb-8">
         <div className="inline-flex rounded-md shadow-sm" role="group">
-          <button
+          {/* <button
             type="button"
             className={`px-5 py-2.5 text-sm font-medium rounded-l-lg ${
               activeTab === "upcoming"
@@ -79,8 +79,8 @@ export default function CampusSection() {
             onClick={() => setActiveTab("upcoming")}
           >
             Próximo Campus
-          </button>
-          <button
+          </button> */}
+          {/* <button
             type="button"
             className={`px-5 py-2.5 text-sm font-medium rounded-r-lg ${
               activeTab === "past"
@@ -90,7 +90,7 @@ export default function CampusSection() {
             onClick={() => setActiveTab("past")}
           >
             Campus Anteriores
-          </button>
+          </button> */}
         </div>
       </div>
 

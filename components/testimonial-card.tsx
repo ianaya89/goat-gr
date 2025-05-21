@@ -6,7 +6,7 @@ interface TestimonialCardProps {
   quote: string
   name: string
   title: string
-  imageQuery: string
+  // imageQuery: string
 }
 
 export default function TestimonialCard({ quote, name, title, imageQuery }: TestimonialCardProps) {
@@ -16,11 +16,11 @@ export default function TestimonialCard({ quote, name, title, imageQuery }: Test
         <Quote className="h-8 w-8 text-blue-600 mb-4" />
         <p className="text-gray-600 mb-6 flex-grow">"{quote}"</p>
         <div className="flex items-center">
-          <ImageWithFallback
+          {/* <ImageWithFallback
             src={`/abstract-geometric-shapes.png?height=60&width=60&query=${imageQuery}`}
             alt={name}
             className="h-12 w-12 rounded-full object-cover mr-4"
-          />
+          /> */}
           <div>
             <h4 className="font-semibold">{name}</h4>
             <p className="text-sm text-gray-500">{title}</p>
