@@ -20,7 +20,7 @@ const sponsorLogos: SponsorLogo[] = [
     src: "/images/sponsors/treos-logo.svg",
     alt: "Treos - Patrocinador Oficial",
     width: 160,
-  // },
+  },
   // {
   //   name: "Balling",
   //   src: "/images/sponsors/balling-logo.webp",
