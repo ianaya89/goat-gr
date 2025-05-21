@@ -18,7 +18,7 @@ const objetivos = [
   "mejorar tu técnica",
   "dominar el juego",
   "competir al más alto nivel",
-  "llegar a la selección",
+  "llegar más lejos",
   "superar tus límites",
   "convertirte en profesional",
   "desarrollar tu potencial",
