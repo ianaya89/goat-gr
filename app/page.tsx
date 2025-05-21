@@ -91,7 +91,7 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-3xl tablet:text-4xl font-bold mb-4">Campus & Clínicas</h2>
             <p className="text-gray-600 max-w-4xl mx-auto">
-            Nuestros Campus de Hockey GOAT Sports son experiencias inmersivas pensadas para jugadores de todos los niveles: desde quienes se inician hasta atletas de alto rendimiento. Durante varios días combinarás entrenamientos técnicos, trabajo táctico, preparación física específica y dinámicas de fortalecimiento mental, mientras creamos un ambiente divertido a inculamos la pasión por el deporte.
+            Nuestros Campus de Hockey GOAT Sports son experiencias inmersivas pensadas para jugadores de todos los niveles: desde quienes se inician hasta atletas de alto rendimiento. Durante varios días combinarás entrenamientos técnicos, trabajo táctico, preparación física específica y dinámicas de fortalecimiento mental, mientras creamos un ambiente divertido a inculcamos la pasión por el deporte.
             <br />
             <br />
             Vení a perfeccionar tu juego, conocer nuevas amistades y vivir el deporte con la energía y el respaldo de GOAT Sports.
