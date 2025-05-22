@@ -21,7 +21,13 @@ const sponsorLogos: SponsorLogo[] = [
     alt: "Treos - Patrocinador Oficial",
     width: 160,
   },
-  // {
+  {
+    name: "Maraton",
+    src: "/images/sponsors/maraton.png",
+    alt: "Maraton - Patrocinador Oficial",
+    width: 140,
+  },
+    // {
   //   name: "Balling",
   //   src: "/images/sponsors/balling-logo.webp",
   //   alt: "Balling - Patrocinador Oficial",
