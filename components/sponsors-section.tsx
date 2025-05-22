@@ -33,6 +33,12 @@ const sponsorLogos: SponsorLogo[] = [
     alt: "Barritas Lecker - Patrocinador Oficial",
     width: 140,
   },
+  {
+    name: "Algabo",
+    src: "/images/sponsors/algabo.png",
+    alt: "Algabo - Patrocinador Oficial",
+    width: 140,
+  },
 ]
 
 export default function SponsorsSection() {
