@@ -25,7 +25,7 @@ const sponsorLogos: SponsorLogo[] = [
     name: "Maraton",
     src: "/images/sponsors/maraton.png",
     alt: "Maraton - Patrocinador Oficial",
-    width: 110,
+    width: 100,
   },
     // {
   //   name: "Balling",
