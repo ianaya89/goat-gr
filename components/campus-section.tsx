@@ -56,7 +56,7 @@ const upcomingCampus = {
   date: "21-27 Julio, 2025",
   location: "Buenos Aires, Argentina",
   description:
-    "¡No te pierdas nuestro próximo Campus de Invierno! 5 dias de entrenamiento intensivos con los mejores coaches. Perfecciona tu técnica, mejora tu condición física y desarrolla tu visión táctica en un ambiente profesional y divertido. Cupos limitadas, ¡reserva tu lugar ahora!",
+    "¡No te pierdas nuestro próximo Campus de Invierno! de 2 a 3 dias de entrenamiento intensivos con los mejores coaches. Perfecciona tu técnica, mejora tu condición física y desarrolla tu visión táctica en un ambiente profesional y divertido. Cupos limitadas, ¡reserva tu lugar ahora!",
   imageUrl: "/images/campus-group-photo.jpg",
   isPast: false,
 }

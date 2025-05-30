@@ -113,7 +113,7 @@ export default function CampusRegistration() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
                   <div className="p-6 text-white">
                     <h1 className="text-3xl font-bold">Inscripción: Campus de Invierno 2025</h1>
-                    <p className="text-lg">21-27 Julio, 2025 • Buenos Aires, Argentina</p>
+                    <p className="text-lg">28 de Julio al 1 de Agosto, 2025 • Buenos Aires, Argentina</p>
                   </div>
                 </div>
               </div>
