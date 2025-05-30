@@ -65,7 +65,7 @@ export default function StaffSection() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
         <div>
           <img
-            src="/images/team-training.png"
+            src="/images/team-training.jpeg"
             alt="Equipo de Entrenadores de GOAT Sports"
             className="rounded-lg shadow-lg w-full"
           />
