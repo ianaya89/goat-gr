@@ -1,3 +1,6 @@
+"use client"
+
+import { useState, useEffect } from "react"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import ServiceCard from "@/components/service-card"
@@ -10,6 +13,7 @@ import HeroSection from "@/components/hero-section"
 import ContactForm from "@/components/contact-form"
 import NewsletterForm from "@/components/newsletter-form"
 import SponsorsSection from "@/components/sponsors-section"
+import CampusPromoModal from "@/components/campus-promo-modal"
 import { getWhatsAppLink } from "@/utils/whatsapp-link"
 import { servicesData } from "@/data/services-data"
 
@@ -17,6 +21,22 @@ import { servicesData } from "@/data/services-data"
 const whatsappLink = getWhatsAppLink()
 
 export default function Home() {
+  // State for the promotional modal
+  const [isPromoModalOpen, setIsPromoModalOpen] = useState(false)
+
+  // Auto-open modal when page loads
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsPromoModalOpen(true)
+    }, 1000) // Open after 1.5 seconds to let the page load
+
+    return () => clearTimeout(timer)
+  }, [])
+
+  const handleClosePromoModal = () => {
+    setIsPromoModalOpen(false)
+  }
+
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
@@ -196,6 +216,12 @@ export default function Home() {
       <SponsorsSection />
 
       <Footer />
+
+      {/* Campus Promo Modal */}
+      <CampusPromoModal
+        isOpen={isPromoModalOpen}
+        onClose={handleClosePromoModal}
+      />
     </div>
   )
 }
