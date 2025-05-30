@@ -43,7 +43,7 @@ export default function Footer() {
               <a href="https://www.facebook.com/profile.php?id=61575793396752" className="text-gray-400 hover:text-white">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="https://www.instagram.com/goatsports.ar/" className="text-gray-400 hover:text-white">
+              <a href="https://www.instagram.com/goatsports.arg" className="text-gray-400 hover:text-white">
                 <Instagram className="h-5 w-5" />
               </a>
               <a href="https://www.linkedin.com/company/goatsportsar" className="text-gray-400 hover:text-white">
