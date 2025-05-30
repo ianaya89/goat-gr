@@ -122,9 +122,9 @@ export default function CampusSection() {
               <p className="text-gray-600 mb-6">{upcomingCampus.description}</p>
 
               <div className="mt-auto">
-                <Link href="/inscripcion-campus">
+                <a href="https://winter25.goatsports.ar" target="_blank">
                   <Button className="bg-blue-600 hover:bg-blue-700 w-full md:w-auto">Inscribirse</Button>
-                </Link>
+                </a>
               </div>
             </div>
           </div>
