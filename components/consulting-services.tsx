@@ -58,7 +58,7 @@ export default function ConsultingServices() {
                 <Users className="h-5 w-5 text-white" />
               </div>
               <div>
-                <h3 className="font-semibold text-lg text-white">Servicios para Countries</h3>
+                <h3 className="font-semibold text-lg text-white">Servicios para Countries y Barrios Cerrados</h3>
                 <p className="text-white/90 text-sm">
                   Creación y gestión de programas recreativos y competitivos para comunidades residenciales.
                 </p>

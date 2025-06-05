@@ -15,6 +15,7 @@ interface CampusEvent {
   description: string
   imageUrl: string
   isPast: boolean
+  link?: string
 }
 
 const campusEvents: CampusEvent[] = [
@@ -22,7 +23,7 @@ const campusEvents: CampusEvent[] = [
     id: "summer-2023",
     title: "Campus de Verano 2023",
     date: "15-30 Enero, 2023",
-    location: "Buenos Aires, Argentina",
+    location: "Ciudad de Buenos Aires",
     description:
       "Nuestro campus de verano 2023 fue un éxito rotundo con más de 100 participantes de todas las edades. Los jugadores disfrutaron de entrenamientos intensivos, partidos amistosos y sesiones con entrenadores internacionales.",
     imageUrl: "/images/campus-goalkeeper-training.jpg",
@@ -50,16 +51,30 @@ const campusEvents: CampusEvent[] = [
   },
 ]
 
-const upcomingCampus = {
-  id: "winter-2025",
-  title: "Campus de Invierno 2025",
-  date: "28 de Julio al 1 de Agosto, 2025",
-  location: "Buenos Aires, Argentina",
-  description:
-    "¡No te pierdas nuestro próximo Campus de Invierno! de 2 a 3 dias de entrenamiento intensivos con los mejores coaches. Perfecciona tu técnica, mejora tu condición física y desarrolla tu visión táctica en un ambiente profesional y divertido. Cupos limitadas, ¡reserva tu lugar ahora!",
-  imageUrl: "/images/campus-group-photo.jpg",
-  isPast: false,
-}
+const upcomingCampus: CampusEvent[] = [
+  {
+    id: "winter-2025",
+    title: "Campus Invierno 2025 en GEBA",
+    date: "28 de Julio al 1 de Agosto, 2025",
+    location: "Ciudad de Buenos Aires",
+    description:
+      "¡No te pierdas nuestro próximo Campus de Invierno! de 2 a 3 dias de entrenamiento intensivos con los mejores coaches. Perfecciona tu técnica, mejora tu condición física y desarrolla tu visión táctica en un ambiente profesional y divertido. Cupos limitadas, ¡reserva tu lugar ahora!",
+    imageUrl: "/images/campus-group-photo.jpg",
+    isPast: false,
+    link: "https://winter25.goatsports.ar",
+  },
+  {
+    id: "gba-sur-2025",
+    title: "Campus GBA Sur 2025 en MGRC",
+    date: "21, 22 y 23 Julio, 2025",
+    location: "Monte Grande, Provincia de Buenos Aires",
+    description:
+      "¡Ustedes lo pidieron y nosotros los escuchamos, llegamos a Zona Sur! Te presentamos el Campus de Invierno en Monte Grande Rugby Club. La misma experiencia de siempre, pero mas cerca tuyo.",
+    imageUrl: "/images/campus-goalkeeper-training.jpg",
+    isPast: false,
+    link: "https://winter25.goatsports.ar",
+  },
+]
 
 export default function CampusSection() {
   const [activeTab, setActiveTab] = useState<"upcoming" | "past">("upcoming")
@@ -96,37 +111,52 @@ export default function CampusSection() {
 
       {/* Upcoming Campus */}
       {activeTab === "upcoming" && (
-        <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200">
-          <div className="grid grid-cols-1 lg:grid-cols-2">
-            <div className="h-64 lg:h-auto">
-              <ImageWithFallback
-                src={upcomingCampus.imageUrl || "/placeholder.svg"}
-                alt="Campus de Invierno 2024 - Grupo de participantes en campo de hockey"
-                fallbackSrc="/placeholder-kngc1.png"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-6 md:p-8 flex flex-col">
-              <h3 className="text-2xl font-bold mb-4">{upcomingCampus.title}</h3>
-
-              <div className="flex items-center mb-3">
-                <Calendar className="h-5 w-5 text-blue-600 mr-2" />
-                <span className="text-gray-700">{upcomingCampus.date}</span>
+        <div>
+          <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
+            Próximos Campus
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {upcomingCampus.map((campus, index) => (
+            <Card key={campus.id} className="overflow-hidden border border-gray-200 bg-white shadow-lg flex flex-col min-h-[600px]">
+              <div className="h-48 overflow-hidden">
+                <ImageWithFallback
+                  src={campus.imageUrl || "/placeholder.svg"}
+                  alt={`${campus.title} - Grupo de participantes en campo de hockey`}
+                  fallbackSrc="/placeholder-kngc1.png"
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                />
               </div>
+              <CardContent className="p-6 flex flex-col flex-grow">
+                <h3 className="text-2xl font-bold mb-4">{campus.title}</h3>
 
-              <div className="flex items-center mb-4">
-                <MapPin className="h-5 w-5 text-blue-600 mr-2" />
-                <span className="text-gray-700">{upcomingCampus.location}</span>
-              </div>
+                <div className="flex items-center mb-3">
+                  <Calendar className="h-5 w-5 text-blue-600 mr-2" />
+                  <span className="text-gray-700">{campus.date}</span>
+                </div>
 
-              <p className="text-gray-600 mb-6">{upcomingCampus.description}</p>
+                <div className="flex items-center mb-4">
+                  <MapPin className="h-5 w-5 text-blue-600 mr-2" />
+                  <span className="text-gray-700">{campus.location}</span>
+                </div>
 
-              <div className="mt-auto">
-                <a href="https://winter25.goatsports.ar" target="_blank">
-                  <Button className="bg-blue-600 hover:bg-blue-700 w-full md:w-auto">Inscribirse</Button>
-                </a>
-              </div>
-            </div>
+                <p className="text-gray-600 mb-6 flex-grow">{campus.description}</p>
+
+                <div className="mt-auto space-y-3">
+                  <a href={`${campus.link}/inscripcion`} target="_blank" className="block">
+                    <Button className="bg-blue-600 hover:bg-blue-700 w-full text-lg py-3">
+                      Inscribirse Ahora
+                    </Button>
+                  </a>
+                  <a href={campus.link} target="_blank" className="block">
+                  <Button variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-50">
+                    Más Información
+                  </Button>
+                  </a>
+                </div>
+
+              </CardContent>
+            </Card>
+          ))}
           </div>
         </div>
       )}
