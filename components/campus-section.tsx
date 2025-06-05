@@ -72,7 +72,7 @@ const upcomingCampus: CampusEvent[] = [
       "¡Ustedes lo pidieron y nosotros los escuchamos, llegamos a Zona Sur! Te presentamos el Campus de Invierno en Monte Grande Rugby Club. La misma experiencia de siempre, pero mas cerca tuyo.",
     imageUrl: "/images/campus-goalkeeper-training.jpg",
     isPast: false,
-    link: "https://winter25.goatsports.ar",
+    link: "https://montegrande.goatsports.ar",
   },
 ]
 
