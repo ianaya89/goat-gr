@@ -98,7 +98,7 @@ export const servicesData: ServiceDetails[] = [
     ],
     images: [
       {
-        src: "/images/team-training-group.jpeg",
+        src: "/images/uba.jpg",
         alt: "Equipo de hockey entrenando",
       },
       {
