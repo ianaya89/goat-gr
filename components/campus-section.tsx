@@ -24,7 +24,7 @@ const upcomingCampus: CampusEvent[] = [
   {
     id: "summer-2025",
     title: "Campus Verano 2025",
-    date: "Enero 2025",
+    date: "Diciembre 2025",
     location: "Argentina",
     description:
       "Seguinos en Instagram para enterarte primero cuando abramos inscripciones.",
