@@ -105,14 +105,14 @@ export const servicesData: ServiceDetails[] = [
         src: "/images/team-recovery-session.jpeg",
         alt: "Sesión de entrenamiento de equipo de rugby",
       },
-      {
-        src: "/placeholder-6lvip.png",
-        alt: "Análisis de video para equipos deportivos",
-      },
-      {
-        src: "/placeholder-y0egj.png",
-        alt: "Vestuarios de instalaciones deportivas",
-      },
+      // {
+      //   src: "/placeholder-6lvip.png",
+      //   alt: "Análisis de video para equipos deportivos",
+      // },
+      // {
+      //   src: "/placeholder-y0egj.png",
+      //   alt: "Vestuarios de instalaciones deportivas",
+      // },
     ],
   },
 ]
