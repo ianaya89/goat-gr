@@ -23,15 +23,17 @@ const whatsappLink = getWhatsAppLink()
 export default function Home() {
   // State for the promotional modal
   const [isPromoModalOpen, setIsPromoModalOpen] = useState(false)
+  const isPromoEnabled = process.env.NEXT_PUBLIC_SHOW_CAMPUS_PROMO === "true"
 
   // Auto-open modal when page loads
   useEffect(() => {
+    if (!isPromoEnabled) return
     const timer = setTimeout(() => {
       setIsPromoModalOpen(true)
     }, 1000) // Open after 1.5 seconds to let the page load
 
     return () => clearTimeout(timer)
-  }, [])
+  }, [isPromoEnabled])
 
   const handleClosePromoModal = () => {
     setIsPromoModalOpen(false)
@@ -218,10 +220,12 @@ export default function Home() {
       <Footer />
 
       {/* Campus Promo Modal */}
-      <CampusPromoModal
-        isOpen={isPromoModalOpen}
-        onClose={handleClosePromoModal}
-      />
+      {isPromoEnabled && (
+        <CampusPromoModal
+          isOpen={isPromoModalOpen}
+          onClose={handleClosePromoModal}
+        />
+      )}
     </div>
   )
 }

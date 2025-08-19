@@ -27,12 +27,12 @@ const sponsorLogos: SponsorLogo[] = [
     alt: "Maraton - Patrocinador Oficial",
     width: 100,
   },
-    // {
-  //   name: "Balling",
-  //   src: "/images/sponsors/balling-logo.webp",
-  //   alt: "Balling - Patrocinador Oficial",
-  //   width: 140,
-  // },
+    {
+    name: "Balling",
+    src: "/images/sponsors/balling-logo.webp",
+    alt: "Balling - Patrocinador Oficial",
+    width: 140,
+  },
     {
     name: "Lecker",
     src: "/images/sponsors/balling-logo.svg",
