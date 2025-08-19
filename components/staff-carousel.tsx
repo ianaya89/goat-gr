@@ -18,18 +18,10 @@ interface StaffMember {
 
 const staffMembers: StaffMember[] = [
   {
-    id: 1,
-    name: "Ignacio Anaya",
-    position: "Co-Fundador",
-    bio: "bio",
-    imageQuery: "professional female field hockey coach",
-    imageUrl: "nacho.jpg",
-  },
-  {
     id: 2,
     name: "Santiago Tarazona",
     position: "Co-Fundador",
-    bio: "bio",
+    bio: "Jugador Olimpico con mas de 10 años de presencia en la Selección masculina de Hockey.",
     imageQuery: "male field hockey coach with clipboard",
     imageUrl: "ito.jpg",
   },
@@ -37,7 +29,7 @@ const staffMembers: StaffMember[] = [
     id: 3,
     name: "Gonzalo Basualdo",
     position: "Co-Fundador",
-    bio: "bio",
+    bio: "Jugador, entrenador y formador con gran experiencia en clubes de primera division y selecciones locales.",
     imageQuery: "young female field hockey coach with children",
     imageUrl: "basu.jpg",
   },
@@ -45,9 +37,17 @@ const staffMembers: StaffMember[] = [
     id: 4,
     name: "Thomas Habif",
     position: "Co-Fundador",
-    bio: "bio",
+    bio: "Jugador Olimpico con mas de 100 partidos internacionles en la Selección masculina de Hockey",
     imageQuery: "sports performance analyst with laptop",
     imageUrl: "thomas.jpg",
+  },
+  {
+    id: 1,
+    name: "Ignacio Anaya",
+    position: "Co-Fundador",
+    bio: "Jugador y Capitán de la primera division del Club Gimnasia y Esgrima.",
+    imageQuery: "professional female field hockey coach",
+    imageUrl: "nacho.jpg",
   },
   // {
   //   id: 5,
@@ -207,7 +207,7 @@ export default function StaffCarousel() {
 
             return (
               <div key={pageIndex} className="w-full flex-shrink-0">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-2">
                   {pageItems.map((member) => (
                     <Card key={member.id} className="border-none shadow-lg h-full">
                       <CardContent className="p-0 flex flex-col h-full">
@@ -221,7 +221,7 @@ export default function StaffCarousel() {
                         <div className="p-4 flex flex-col flex-grow">
                           <h3 className="text-lg font-bold text-gray-900">{member.name}</h3>
                           <p className="text-blue-600 font-medium mb-2">{member.position}</p>
-                          {/* <p className="text-gray-600 text-sm">{member.bio}</p> */}
+                          <p className="text-gray-600 text-sm">{member.bio}</p>
                         </div>
                       </CardContent>
                     </Card>
@@ -234,37 +234,43 @@ export default function StaffCarousel() {
       </div>
 
       {/* Navigation Arrows */}
-      <Button
-        variant="outline"
-        size="icon"
-        className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white border-gray-200 text-gray-700 rounded-full z-10 shadow-md md:-left-5"
-        onClick={prevPage}
-        aria-label="Página anterior"
-      >
-        <ChevronLeft className="h-6 w-6" />
-      </Button>
+      {totalPages > 1 && (
+        <>
+          <Button
+            variant="outline"
+            size="icon"
+            className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white border-gray-200 text-gray-700 rounded-full z-10 shadow-md md:-left-5"
+            onClick={prevPage}
+            aria-label="Página anterior"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </Button>
 
-      <Button
-        variant="outline"
-        size="icon"
-        className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white border-gray-200 text-gray-700 rounded-full z-10 shadow-md md:-right-5"
-        onClick={nextPage}
-        aria-label="Página siguiente"
-      >
-        <ChevronRight className="h-6 w-6" />
-      </Button>
+          <Button
+            variant="outline"
+            size="icon"
+            className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white border-gray-200 text-gray-700 rounded-full z-10 shadow-md md:-right-5"
+            onClick={nextPage}
+            aria-label="Página siguiente"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </Button>
+        </>
+      )}
 
       {/* Dots Indicator */}
-      <div className="flex justify-center mt-4 space-x-2">
-        {Array.from({ length: totalPages }).map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToPage(index)}
-            className={`w-3 h-3 rounded-full transition-colors ${index === currentPage ? "bg-blue-600" : "bg-gray-300"}`}
-            aria-label={`Ir a página ${index + 1}`}
-          />
-        ))}
-      </div>
+      {totalPages > 1 && (
+        <div className="flex justify-center mt-4 space-x-2">
+          {Array.from({ length: totalPages }).map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToPage(index)}
+              className={`w-3 h-3 rounded-full transition-colors ${index === currentPage ? "bg-blue-600" : "bg-gray-300"}`}
+              aria-label={`Ir a página ${index + 1}`}
+            />
+          ))}
+        </div>
+      )}
     </div>
   )
 }
