@@ -69,11 +69,10 @@ export default function ServiceCard({ title, description, icon, imageSrc, detail
 
           <Button
             variant="outline"
-            className="w-full border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white mt-auto transition-all duration-300 font-semibold hover:shadow-lg hover:shadow-blue-500/25 group-hover:border-blue-700"
+            className="w-full border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white mt-auto transition-all duration-300 font-semibold hover:shadow-lg hover:shadow-blue-500/25 group-hover:border-blue-700 relative overflow-hidden"
             onClick={() => setIsModalOpen(true)}
           >
-            <span className="relative z-10">Más Información</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 opacity-0 hover:opacity-100 transition-opacity duration-300 rounded"></div>
+            Más Información
           </Button>
         </CardContent>
       </Card>
