@@ -49,9 +49,10 @@ export default function StaffSection() {
 
   return (
     <div className="container mx-auto px-4">
+      {/* Enhanced About Section Header */}
       <div className="text-center mb-16">
         <h2 className="text-3xl tablet:text-4xl font-bold mb-4">Sobre Nosotros</h2>
-        <p className="text-gray-600 max-w-4xl mx-auto">
+        <p className="text-gray-600 max-w-4xl mx-auto leading-relaxed text-lg">
           Somos socios, amigos y compañeros de equipo, motivados por la pasión de acompañar a deportistas en el
           camino hacia sus sueños. Nos propusimos crear un lugar donde poder darte las herramientas, respaldo y
           acompañamiento que necesitas, para que alcances cualquier meta que propongas.
@@ -61,66 +62,71 @@ export default function StaffSection() {
           cancha. Con un enfoque integral trabajamos tu técnica, visión táctica, condición física y fortaleza mental.
         </p>
       </div>
-      {/* About Section */}
+
+      {/* Enhanced About Section with modern styling */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-        <div>
+        <div className="relative group">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
           <img
             src="/images/team-training.jpeg"
             alt="Equipo de Entrenadores de GOAT Sports"
-            className="rounded-lg shadow-lg w-full"
+            className="relative rounded-2xl shadow-2xl w-full transform group-hover:scale-105 transition-transform duration-500 hover-lift"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </div>
-        <div>
-          <div className="space-y-4">
-            <div className="flex items-start">
-              <CheckCircle2 className="h-6 w-6 text-blue-600 mr-3 flex-shrink-0 mt-1" />
-              <div>
-                <h4 className="font-semibold text-lg">Entrenadores Expertos</h4>
-                <p className="text-gray-600">
-                  Nuestro equipo de entrenadores incluye ex jugadores nacionales e instructores certificados con años de
-                  experiencia.
-                </p>
-              </div>
-            </div>
 
-            <div className="flex items-start">
-              <CheckCircle2 className="h-6 w-6 text-blue-600 mr-3 flex-shrink-0 mt-1" />
+        <div className="space-y-6">
+          {[
+            {
+              title: "Entrenadores Expertos",
+              description: "Nuestro equipo de entrenadores incluye ex jugadores nacionales e instructores certificados con años de experiencia."
+            },
+            {
+              title: "Desarrollo Personalizado",
+              description: "Creamos planes de entrenamiento individualizados basados en tus habilidades actuales y objetivos futuros."
+            },
+            {
+              title: "Instalaciones de primer nivel",
+              description: "Entrena en instalaciones premium con el equipo y la tecnología más avanzados."
+            },
+            {
+              title: "Resultados Probados",
+              description: "Nuestros atletas han logrado resultados a nivel universitario, nacional e internacional."
+            }
+          ].map((item, index) => (
+            <div key={index} className="flex items-start group hover:bg-blue-50/50 p-4 rounded-xl transition-all duration-300">
+              <div className="p-2 bg-blue-100 rounded-full group-hover:bg-blue-200 transition-colors duration-300 mr-4">
+                <CheckCircle2 className="h-5 w-5 text-blue-600 group-hover:scale-110 transition-transform duration-300" />
+              </div>
               <div>
-                <h4 className="font-semibold text-lg">Desarrollo Personalizado</h4>
-                <p className="text-gray-600">
-                  Creamos planes de entrenamiento individualizados basados en tus habilidades actuales y objetivos
-                  futuros.
+                <h4 className="font-semibold text-lg mb-2 group-hover:text-blue-700 transition-colors duration-300">{item.title}</h4>
+                <p className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300 leading-relaxed">
+                  {item.description}
                 </p>
               </div>
             </div>
-
-            <div className="flex items-start">
-              <CheckCircle2 className="h-6 w-6 text-blue-600 mr-3 flex-shrink-0 mt-1" />
-              <div>
-                <h4 className="font-semibold text-lg">Instalaciones de primer nivel</h4>
-                <p className="text-gray-600">
-                  Entrena en instalaciones premium con el equipo y la tecnología más avanzados.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start">
-              <CheckCircle2 className="h-6 w-6 text-blue-600 mr-3 flex-shrink-0 mt-1" />
-              <div>
-                <h4 className="font-semibold text-lg">Resultados Probados</h4>
-                <p className="text-gray-600">
-                  Nuestros atletas han logrado resultados a nivel universitario, nacional e internacional.
-                </p>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
-      {/* Staff Carousel */}
-      <h3 className="text-2xl font-bold mb-8 text-center">Nuestro Equipo</h3>
+      {/* Enhanced Staff Team Section */}
+      <div className="relative">
+        {/* Decorative background elements */}
+        <div className="absolute top-0 left-1/4 w-32 h-32 bg-blue-100/30 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-0 right-1/4 w-24 h-24 bg-purple-100/30 rounded-full blur-2xl animate-float animation-delay-2000"></div>
 
-      <StaffCarousel />
+        <div className="text-center mb-8 relative z-10">
+          <h3 className="text-3xl font-bold mb-4">Nuestro Equipo</h3>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+          <p className="text-gray-600 mt-4 max-w-2xl mx-auto leading-relaxed">
+            Conoce a las personas que se encargarán de acompañarte en tu crecimiento deportivo. Cada uno de nuestros entrenadores aporta su experiencia única y pasión por el deporte para ayudarte a alcanzar tu máximo potencial.
+          </p>
+        </div>
+
+        <div className="relative z-10">
+          <StaffCarousel />
+        </div>
+      </div>
     </div>
   )
 }

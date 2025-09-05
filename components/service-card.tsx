@@ -42,27 +42,38 @@ export default function ServiceCard({ title, description, icon, imageSrc, detail
 
   return (
     <>
-      <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg h-full">
-        <div className="h-48 overflow-hidden">
+      <Card className="group overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10 h-full border-0 bg-white hover-lift relative">
+
+        <div className="h-48 overflow-hidden relative">
+          {/* Shimmer effect on hover */}
+          <div className="absolute inset-0 bg-shimmer opacity-0 group-hover:opacity-100 animate-shimmer z-10"></div>
           <ImageWithFallback
             src={displayImage || "/placeholder.svg"}
             alt={title}
             fallbackSrc={fallbackImage}
-            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+            className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
           />
         </div>
-        <CardContent className="p-6 flex flex-col h-[calc(100%-12rem)]">
-          <div className="flex items-center mb-4">
-            {getIcon()}
-            <h3 className="text-xl font-bold ml-2">{title}</h3>
+
+        <CardContent className="p-6 flex flex-col h-[calc(100%-12rem)] relative z-20">
+          <div className="flex items-center mb-4 group-hover:transform group-hover:scale-105 transition-transform duration-300">
+            <div className="p-2 rounded-full bg-blue-50 group-hover:bg-blue-100 transition-colors duration-300">
+              {getIcon()}
+            </div>
+            <h3 className="text-xl font-bold ml-3 group-hover:text-blue-700 transition-colors duration-300">{title}</h3>
           </div>
-          <p className="text-gray-600 mb-6 flex-grow">{description}</p>
+
+          <p className="text-gray-600 mb-6 flex-grow group-hover:text-gray-700 transition-colors duration-300 leading-relaxed">
+            {description}
+          </p>
+
           <Button
             variant="outline"
-            className="w-full border-blue-600 text-blue-600 hover:bg-blue-50 mt-auto"
+            className="w-full border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white mt-auto transition-all duration-300 font-semibold hover:shadow-lg hover:shadow-blue-500/25 group-hover:border-blue-700"
             onClick={() => setIsModalOpen(true)}
           >
-            Más Información
+            <span className="relative z-10">Más Información</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 opacity-0 hover:opacity-100 transition-opacity duration-300 rounded"></div>
           </Button>
         </CardContent>
       </Card>
