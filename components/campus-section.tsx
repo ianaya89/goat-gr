@@ -40,7 +40,7 @@ const upcomingCampus: CampusEvent[] = [
     date: "Diciembre 2025",
     location: "Rosario, Santa Fe",
     description:
-      "Mudamos toda la experiencia GOAT a la ciudad de Rosario, y te invitamos a vivir esta primer edición en las instalaciones de primer nivel que nos ofrece Estancia Damfield.",
+      "Mudamos toda la experiencia GOAT a la ciudad de Rosario, y te invitamos a vivir esta edición en las instalaciones de primer nivel que nos ofrece Estancia Damfield.",
     imageUrl: "/images/damfield.jpg",
     isPast: false,
     comingSoon: true,

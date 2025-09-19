@@ -14,7 +14,10 @@ interface CampusPromoModalProps {
 export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalProps) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[550px] max-h-[90vh] overflow-hidden p-0 border-0">
+      <DialogContent className="sm:max-w-[550px] max-h-[85vh] m-4 sm:m-0 overflow-hidden p-0 border-0">
+        {/* Hidden Dialog Title for Accessibility */}
+        <DialogTitle className="sr-only">Campus Primavera Monte Grande 2025 - Inscripciones Abiertas</DialogTitle>
+        
         {/* Hero Section with Overlay */}
         <div className="relative h-72">
           {/* Background Image with Gradient Overlay */}
@@ -27,6 +30,15 @@ export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalPr
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
           </div>
+
+          {/* Close Button - Mobile Friendly */}
+          <button
+            onClick={onClose}
+            className="absolute top-4 left-4 z-20 w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm text-gray-900 hover:bg-white transition-all shadow-lg flex items-center justify-center touch-manipulation"
+            aria-label="Cerrar"
+          >
+            <X className="h-5 w-5 font-bold" />
+          </button>
 
           {/* Floating Badge */}
           <div className="absolute top-4 right-4 z-10">
@@ -122,7 +134,7 @@ export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalPr
             <Button
               variant="ghost"
               onClick={onClose}
-              className="w-full text-gray-500 hover:text-gray-700 hover:bg-gray-50 py-3 text-sm"
+              className="w-full text-gray-500 hover:text-gray-700 hover:bg-gray-50 py-4 text-sm font-medium touch-manipulation"
             >
               Tal vez más tarde
             </Button>
