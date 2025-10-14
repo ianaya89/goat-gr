@@ -22,18 +22,18 @@ interface CampusEvent {
 }
 
 const upcomingCampus: CampusEvent[] = [
-  {
-    id: "spring-2025",
-    title: "CAMPUS Primavera 2025 VERSIÓN 2.0 GBA SUR",
-    date: "Primavera 2025",
-    location: "Monte Grande, Provincia de Buenos Aires",
-    description:
-      "El éxito fue rotundo! Después del primer campus que superó todas las expectativas, presentamos la Versión 2.0 - Una jornada única de hockey en Monte Grande Rugby Club.",
-    imageUrl: "https://montegrande.goatsports.ar/images/new/5.JPG",
-    isPast: false,
-    link: "https://montegrande.goatsports.ar",
-    openRegistration: true,
-  },
+  // {
+  //   id: "spring-2025",
+  //   title: "CAMPUS Primavera 2025 VERSIÓN 2.0 GBA SUR",
+  //   date: "Primavera 2025",
+  //   location: "Monte Grande, Provincia de Buenos Aires",
+  //   description:
+  //     "El éxito fue rotundo! Después del primer campus que superó todas las expectativas, presentamos la Versión 2.0 - Una jornada única de hockey en Monte Grande Rugby Club.",
+  //   imageUrl: "https://montegrande.goatsports.ar/images/new/5.JPG",
+  //   isPast: false,
+  //   link: "https://montegrande.goatsports.ar",
+  //   openRegistration: true,
+  // },
   {
     id: "rosario-2025",
     title: "Campus Verano 2025 en Rosario",
