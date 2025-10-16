@@ -24,7 +24,7 @@ export default function Home() {
   // State for the promotional modal
   const [isPromoModalOpen, setIsPromoModalOpen] = useState(false)
   // const isPromoEnabled = process.env.NEXT_PUBLIC_SHOW_CAMPUS_PROMO === "true"
-  const isPromoEnabled = false
+  const isPromoEnabled = true
 
   // Auto-open modal when page loads
   useEffect(() => {
