@@ -75,7 +75,7 @@ export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalPr
                 </div>
                 <div>
                   <p className="text-xs text-gray-500 uppercase font-medium">Fecha</p>
-                  <p className="text-sm font-bold text-gray-900">9-11 Diciembre</p>
+                  <p className="text-sm font-bold text-gray-900">9, 10 y 11 Diciembre</p>
                 </div>
               </div>
             </div>
