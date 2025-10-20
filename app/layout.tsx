@@ -118,6 +118,9 @@ export default function RootLayout({
         {/* Etiqueta de color del tema */}
         <meta name="theme-color" content="#00237c" />
 
+        {/* Facebook domain verification */}
+        <meta name="facebook-domain-verification" content="ec3c0v5mlglmgdoutyxmpl8cogu5tp" />
+
         {/* Meta Pixel Code */}
         <script
           dangerouslySetInnerHTML={{
