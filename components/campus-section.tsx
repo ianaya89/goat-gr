@@ -54,7 +54,9 @@ const upcomingCampus: CampusEvent[] = [
       "Nuestro Campus en GEBA ya se convirtió un clásico del verano que mejora cada año, y el 2025 no sera la excepción. Seguinos en Instagram para enterarte primero cuando abramos inscripciones.",
     imageUrl: "/images/campus-coaches-players.jpg",
     isPast: false,
-    comingSoon: true,
+    comingSoon: false,
+    link: "https://summer.goatsports.ar",
+    openRegistration: true,
   },
   {
     id: "winter-2025",
